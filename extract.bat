@@ -42,4 +42,4 @@ if %found%==0 goto :eof
 set /a token+=1
 goto :loop
 :end
-for /f "tokens=*" %%i in (%upload%) do echo %%i
+::SWEET::DREAMS`
