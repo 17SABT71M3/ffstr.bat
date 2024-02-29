@@ -10,19 +10,21 @@ set string=%3
 set string=%string:^=^^%
 set string=%string:|=^|%
 set string=%string:&=^&%
-ReM if "%4" NEQ "" echo %4|findstr /r "^/[0-9][0-9]*$"
+ReM (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
+
 REM echo Delimiter = "%bemindfulof% "
 REM echo regex = %regex%
 REM echo string= %string%
-set remove=
+
 REM ))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-REM SAMPLE PARAMETERS ------ |
-REM                   . .  \ |/
-REM                    `    \/
+REM SAMPLE PARAMETERS - - - - -|
+REM                   . .  `\  | /
+REM                    `    `\ |/
+REM                         ` \/
 REM .
 REM "[[A-Za-z]*]"
 REM "Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o].webm"
-rem be mindful all you sons!!
+rem echo:be mindful all you sons!!
 rem echo:Hold on to your Horses.......!
 rem echo:It's time for some token frenzy..
 set whoami=%%i
