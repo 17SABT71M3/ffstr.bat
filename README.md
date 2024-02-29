@@ -23,3 +23,5 @@ There are two substitutes defined in the batch script, namely
 ### Delimiters
 Delimiters are symbols that are not part of the search. They are used to separate strings into 'tokens'. The built-in and always on Delimiter is Space. However you still have to write something as the delimiter parameter. If you want to continue using space just write the delimiter as `"&"`.
 Delimiters like `&` and `|` must always be escaped like `"^&"` and `"^|"` respectively.
+
+(C) Readme . Rest in Peace ☮
