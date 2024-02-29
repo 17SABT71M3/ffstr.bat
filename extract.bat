@@ -38,7 +38,7 @@ for /f "tokens=%token% delims=%bemindfulof% " %%i in (%string%) do set /a found=
 if %uploadtaken% NEQ 1 goto continue
 for /f "tokens=%token% delims=%bemindfulof% " %%i in (%string%) do set /a found=1&echo "%%i"|findstr /r %regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
 :continue
-if %uploadtaken%==0 for /f "tokens=*" %%i in (%upload%) DO for /f "tokens=*" %%a in ('echo %%i') do echo %%a
+if %uploadtaken%==0 for /f "tokens=*" %%i in (%upload%) DO for /f "delims=" %%a in ('echo:%%i') do echo %%a
 if %found%==0 goto :eof
 set /a token+=1
 goto :loop
