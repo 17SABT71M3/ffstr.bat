@@ -4,7 +4,9 @@ set bemindfulof=%~1
 set regex=%2
 set regex=%regex:[Capital]=[A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z]%
 set string=%3
+set string=%string:^=^^%
 set string=%string:|=^|%
+set string=%string:&=^&%
 ReM if "%4" NEQ "" echo %4|findstr /r "^/[0-9][0-9]*$"
 REM echo Delimiter = "%bemindfulof% "
 REM echo demeaner=x%demeaner%x
@@ -30,9 +32,10 @@ set /a found=0
 set upload=
 for /f "tokens=%token% delims=%bemindfulof% " %%i in (%string%) do set /a found=1&echo %%i|findstr /r %regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
 :continue
-if %uploadtaken%==0 echo %upload%
+if %uploadtaken%==0 for /f "tokens=*" %%i in (%upload%) do set vasanthi=%%i
+if %uploadtaken%==0 echo %vasanthi%
 if %found%==0 goto :eof
 set /a token+=1
 goto :loop
 :end
-echo %upload%
+for /f "tokens=*" %%i in (%upload%) do echo %%i
