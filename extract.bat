@@ -12,7 +12,6 @@ set string=%string:|=^|%
 set string=%string:&=^&%
 ReM if "%4" NEQ "" echo %4|findstr /r "^/[0-9][0-9]*$"
 REM echo Delimiter = "%bemindfulof% "
-REM echo demeaner=x%demeaner%x
 REM echo regex = %regex%
 REM echo string= %string%
 set remove=
@@ -23,7 +22,7 @@ REM                    `    \/
 REM .
 REM "[[A-Za-z]*]"
 REM "Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o].webm"
-rem echo %bemindfulof%
+rem be mindful all you sons!!
 rem echo:Hold on to your Horses.......!
 rem echo:It's time for some token frenzy..
 set whoami=%%i
