@@ -48,6 +48,34 @@ Hello
 Mister
 Pierce
 ```
+- Example #4 ```extract.bat . "^[^Capital]*$" "Hello hollow oh so dear Mister PierceX ------"```
 
+Output:
+```
+hollow
+oh
+so
+dear
+------
+```
+- Example #5 ```extract.bat . "[^Capital]" "Hello hollow oh so dear Mister PierceX ------"```
+
+Output:
+```
+Hello
+hollow
+oh
+so
+dear
+Mister
+PierceX
+------
+```
+- Example #6 ```extract.bat . "[Capital]$" "Hello hollow oh so dear Mister PierceX ------"```
+
+Output:
+```
+PierceX
+```
 
 (C) Readme . Rest in Peace `☮`
