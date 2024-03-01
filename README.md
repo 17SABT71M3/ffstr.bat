@@ -26,7 +26,7 @@ Delimiters like `&` and `|` must always be escaped like `"^&"` and `"^|"` respec
 
 
 
-### Noob section :hear_no_evil::hear_no_evil::hear_no_evil:
+### Noob Heaven :hear_no_evil::hear_no_evil::hear_no_evil:
 Simple usage in batch files.
 - Example #1
 ```
