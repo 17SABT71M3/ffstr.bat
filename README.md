@@ -28,9 +28,17 @@ Delimiters like `&` and `|` must always be escaped like `"^&"` and `"^|"` respec
 
 ### Noob section :hear_no_evil::hear_no_evil::hear_no_evil:
 Simple usage in batch files.
+- Example #1
 ```
 set file_name="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"
 for /f "delims=" %%i in ('extract.bat "&" "[[a-z]]" %file_name%') do set removable_part=%%i
 CALL set file_name=%%filename:%removable_part%=%%
 ```
+- Example #2
+```
+set file_name="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"
+for /f "delims=" %%i in ('extract.bat "()" "[1-2][0-9][0-9][0-9]" %file_name%') do set year=%%i
+REM year of song is %year%
+```
+
 (C) Readme . Rest in Peace `☮`
