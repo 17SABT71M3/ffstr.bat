@@ -10,6 +10,8 @@ set string=%3
 set string=%string:^=^^%
 set string=%string:|=^|%
 set string=%string:&=^&%
+set string=%string:>=^>%
+set string=%string:<=^<%
 
 ReM (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
 
@@ -18,7 +20,6 @@ REM echo regex = %regex%
 REM echo string= %string%
 
 REM ))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
 REM SAMPLE PARAMETERS - - - - -|
 REM                   . .  `\  | /
 REM                    `    `\ |/
@@ -26,13 +27,9 @@ REM                         ` \/
 REM .
 REM "[[A-Za-z]*]"
 REM "Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o].webm"
-
-rem echo:BE MINDFUL ALL YOU SONS OF MEN!!!
-rem echo:ON HORSEBACK, OF COW BELLS OF DUMBELLS
-rem echo:OF CHARIOTS AND THE SOUND OF KNOCKING
-rem echo:...AND THE TUNE!!!
-rem echo:OF THE DUMBELL, THE TRUMPET AND THE PIPER!!
-
+rem echo:be mindful all you sons!!
+rem echo:Hold on to your Horses.......!
+rem echo:It's time for some token frenzy..
 set whoami=%%i
 set /a token=1
 set /a continue=0
