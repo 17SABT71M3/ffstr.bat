@@ -1,6 +1,7 @@
 @echo off
 set finalupload=
 set bemindfulof=%~1
+ REM <WEL COME> /\Namastey0`:,
 set regex=%2
   set regex=%regex:[Capital]=[ABCDEFGHIJKLMNOPQRSTUVWXYZ]%
 set regex=%regex:[^Capital]=[^ABCDEFGHIJKLMNOPQRSTUVWXYZ]%
@@ -37,12 +38,13 @@ set /a continue=0
 set /a uploadtaken=1
 set /a found=0
 set upload=
-for /f "tokens=%token% delims=%bemindfulof% " %%i in (%string%) do set /a found=1&echo %%i|findstr /r %regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
+
+for /f "tokens=%token% delims=%bemindfulof%" %%i in (%string%) do set /a found=1&echo %%i|findstr /r %regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
 if %uploadtaken% NEQ 1 goto continue
-for /f "tokens=%token% delims=%bemindfulof% " %%i in (%string%) do set /a found=1&echo "%%i"|findstr /r %regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
+for /f "tokens=%token% delims=%bemindfulof%" %%i in (%string%) do set /a found=1&echo "%%i"|findstr /r %regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
 :continue
 if %uploadtaken%==0 for /f "tokens=*" %%i in (%upload%) DO for /f "delims=" %%a in ('echo:%%i') do echo %%a
-if %found%==0 goto :eof
+if %found%==0  goto :eof
 set /a token+=1
 goto :loop
 :end
