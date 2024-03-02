@@ -2,7 +2,7 @@
 
 Let's delve into the workings of the regex itself:
 
-```C:\Users\Anil Bapna\Desktop>extract.bat . "[a-z]" "HELo"```
+```C:\Users\Anil Bapna\Desktop>extract.bat /r . "[a-z]" "HELo"```
 - The first parameter is the `FINDSTR` handle Eg. `/r`
 - The second parameter is the delimiter
 - The third parameter is the `FINDSTR`-compatible regex
