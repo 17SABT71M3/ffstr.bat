@@ -3,13 +3,14 @@
 Let's delve into the workings of the regex itself:
 
 ```C:\Users\Anil Bapna\Desktop>extract.bat . "[a-z]" "HELo"```
-- The first parameter is the delimiter
-- The second parameter is the `FINDSTR`-compatible regex
-- The Third parameter is the STRING to extract substring from.
+- The first parameter is the `FINDSTR` handle Eg. `/r`
+- The second parameter is the delimiter
+- The third parameter is the `FINDSTR`-compatible regex
+- The fourth parameter is the STRING to extract substring from.
 
 This particular batch script has built-in substitutes for `finstr`'s certain short comings. For instance, you will find it difficult if u need to specify capital or lower letters. `Findstr` has a particular way of functioning that is different from normal regexes. Example-
 ```
-C:\Users\Anil Bapna\Desktop>extract.bat . "^[a-z]" "HELo hello"
+C:\Users\Anil Bapna\Desktop>extract.bat /r . "^[a-z]" "HELo hello"
 HELo
 hello
 ```
@@ -25,7 +26,7 @@ Delimiters are symbols that are not part of the search. They are used to separat
 Delimiters like `&` and `|` must always be escaped like `"^&"` and `"^|"` respectively.
 
 ### Wi-ki  :newspaper:
-- Example #1 ```extract.bat " " "^[Capital]" "Hello hollow oh so dear Mister Pierce"```
+- Example #1 ```extract.bat /r " " "^[Capital]" "Hello hollow oh so dear Mister Pierce"```
 
 Output:
 ```
@@ -33,7 +34,7 @@ Hello
 Mister
 Pierce
 ```
-- Example #2 ```extract.bat " " "^[^Capital]*$" "Hello hollow oh so dear Mister PierceX ------"```
+- Example #2 ```extract.bat /r " " "^[^Capital]*$" "Hello hollow oh so dear Mister PierceX ------"```
 
 Output:
 ```
@@ -43,7 +44,7 @@ so
 dear
 ------
 ```
-- Example #3 ```extract.bat  " " "[^Capital]" "Hello hollow oh so dear Mister PierceX ------"```
+- Example #3 ```extract.bat /r " " "[^Capital]" "Hello hollow oh so dear Mister PierceX ------"```
 
 Output:
 ```
@@ -56,11 +57,17 @@ Mister
 PierceX
 ------
 ```
-- Example #4 ```extract.bat  " " "[Capital]$" "Hello hollow oh so dear Mister PierceX ------"```
+- Example #4 ```extract.bat /r " " "[Capital]$" "Hello hollow oh so dear Mister PierceX ------"```
 
 Output:
 ```
 PierceX
+```
+- Example #5 ```extract.bat /c:  "H"  " " "x x yHELLO"```
+
+Output:
+```
+x x y
 ```
 
 ### Noob Heaven :hear_no_evil::hear_no_evil::hear_no_evil:
@@ -68,13 +75,13 @@ Simple usage in batch files.
 - Example #1
 ```
 set file_name="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"
-for /f "delims=" %%i in ('extract.bat " " "[[a-z]]" %file_name%') do set removable_part=%%i
+for /f "delims=" %%i in ('extract.bat /r " " "[[a-z]]" %file_name%') do set removable_part=%%i
 CALL set file_name=%%filename:%removable_part%=%%
 ```
 - Example #2
 ```
 set file_name="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"
-for /f "delims=" %%i in ('extract.bat "()" "[1-2][0-9][0-9][0-9]" %file_name%') do set year=%%i
+for /f "delims=" %%i in ('extract.bat /r "()" "[1-2][0-9][0-9][0-9]" %file_name%') do set year=%%i
 REM year of song is %year%
 ```
 
