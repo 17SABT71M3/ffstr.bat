@@ -11,16 +11,20 @@ set regex=%regex:[^Capital]=[^ABCDEFGHIJKLMNOPQRSTUVWXYZ]%
   set regex=%regex:[^LOWER]=[^abcdefghijklmnopqrstuvwxyz]%
     set regex=%regex:[LOWER]=[abcdefghijklmnopqrstuvwxyz]%
 
-if /i "%handle%"=="/c:" goto skip_handle_init
+if /i "%handle%"=="/c:" goto endinit
 setlocal enabledelayedexpansion
 set thirst=!handle!
 set first=!thirst:~0,1!
 if "!first!" NEQ "/" goto :printhelpmenu
 set local=
-for /l %%i in (1,1,5) do set something=!thirst:~%%i,1!&set local=!local! !something!
+set /a cis=0
+for /l %%i in (1,1,10) do set something=!thirst:~%%i,1!&(if /i "&!something!&" =="&c&" set /a cis=1)&if /i "&!something!&" NEQ "&c&" if "&!something!&" NEQ "&:&" set local=!local! !something!
+set prepare=
+if %cis%==1 set local=!local! c:
+if %cis%==1 for %%i in (%local%) do set prepare=!prepare!%%i
 for %%i in (%local%) do (
 set /a cool=0
-
+if /i "&%%i&"=="&c:&" set /a cool=1
 if /i "&%%i&"=="&b&" set /a cool=1
 if /i "&%%i&"=="&e&" set /a cool=1
 if /i "&%%i&"=="&l&" set /a cool=1
@@ -30,6 +34,7 @@ if /i "&%%i&"=="&x&" set /a cool=1
 if /i "&%%i&"=="&v&" set /a cool=1
 if !cool!==0 goto :printhelpmenu
 )
+if %cis%==1 Endlocal&set handle=/%prepare%&goto endinit
 endlocal disabledelayedexpansion
 goto _init
 :printhelpmenu
@@ -52,17 +57,15 @@ echo:
 echo:Not----^> /b /e /l OR /R /I
 goto :eof
 :_init
-
 REM caution space sensitive code
 set handle=%handle% 
-:skip_handle_init
+:endinit
 set string=%4
 set string=%string:^=^^%
 set string=%string:|=^|%
 set string=%string:&=^&%
 set string=%string:>=^>%
 set string=%string:<=^<%
-
 
 
 ReM (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
