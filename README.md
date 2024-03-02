@@ -68,7 +68,7 @@ PierceX
 Output:
 ```
 x x y
-EL LO
+ EL LO
 ```
 
 ### Noob Heaven :hear_no_evil::hear_no_evil::hear_no_evil:
@@ -87,4 +87,5 @@ REM year of song is %year%
 ```
 ~<b>Known bugs:</b> It skips the leading spaces in strings,~
 
+Praise The Lord ! for helping me thru this Project
 (C) Readme . Rest in Peace `☮`
