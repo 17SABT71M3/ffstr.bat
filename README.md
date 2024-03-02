@@ -24,7 +24,44 @@ There are two substitutes defined in the batch script, namely
 Delimiters are symbols that are not part of the search. They are used to separate strings into 'tokens'. The built-in and always on Delimiter is Space. However you still have to write something as the delimiter parameter. If you want to continue using space just write the delimiter as `"&"`.
 Delimiters like `&` and `|` must always be escaped like `"^&"` and `"^|"` respectively.
 
+### Wi-ki  :newspaper:
+- Example #1 ```extract.bat "&" "^[Capital]" "Hello hollow oh so dear Mister Pierce"```
 
+Output:
+```
+Hello
+Mister
+Pierce
+```
+- Example #2 ```extract.bat "&" "^[^Capital]*$" "Hello hollow oh so dear Mister PierceX ------"```
+
+Output:
+```
+hollow
+oh
+so
+dear
+------
+```
+- Example #3 ```extract.bat "&" "[^Capital]" "Hello hollow oh so dear Mister PierceX ------"```
+
+Output:
+```
+Hello
+hollow
+oh
+so
+dear
+Mister
+PierceX
+------
+```
+- Example #4 ```extract.bat "&" "[Capital]$" "Hello hollow oh so dear Mister PierceX ------"```
+
+Output:
+```
+PierceX
+```
 
 ### Noob Heaven :hear_no_evil::hear_no_evil::hear_no_evil:
 Simple usage in batch files.
@@ -40,42 +77,6 @@ set file_name="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"
 for /f "delims=" %%i in ('extract.bat "()" "[1-2][0-9][0-9][0-9]" %file_name%') do set year=%%i
 REM year of song is %year%
 ```
-- Example #3 ```extract.bat "&" "^[Capital]" "Hello hollow oh so dear Mister Pierce"```
 
-Output:
-```
-Hello
-Mister
-Pierce
-```
-- Example #4 ```extract.bat "&" "^[^Capital]*$" "Hello hollow oh so dear Mister PierceX ------"```
-
-Output:
-```
-hollow
-oh
-so
-dear
-------
-```
-- Example #5 ```extract.bat "&" "[^Capital]" "Hello hollow oh so dear Mister PierceX ------"```
-
-Output:
-```
-Hello
-hollow
-oh
-so
-dear
-Mister
-PierceX
-------
-```
-- Example #6 ```extract.bat "&" "[Capital]$" "Hello hollow oh so dear Mister PierceX ------"```
-
-Output:
-```
-PierceX
-```
 
 (C) Readme . Rest in Peace `☮`
