@@ -88,4 +88,4 @@ REM year of song is %year%
 ~<b>Known bugs:</b> It skips the leading spaces in strings,~
 
 Praise The Lord ! for helping me thru this Project
-(C) Readme . Rest in Peace `☮`
+<br>(C) Readme . Rest in Peace `☮`
