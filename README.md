@@ -63,11 +63,12 @@ Output:
 ```
 PierceX
 ```
-- Example #5 ```extract.bat /c:  "H"  " " "x x yHELLO"```
+- Example #5 ```extract.bat /c:  "H"  " " "x x yH ELLO"```
 
 Output:
 ```
 x x y
+ELLO
 ```
 
 ### Noob Heaven :hear_no_evil::hear_no_evil::hear_no_evil:
