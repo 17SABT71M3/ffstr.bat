@@ -30,8 +30,8 @@ if /i "&%%i&"=="&x&" set /a cool=1
 if /i "&%%i&"=="&v&" set /a cool=1
 if !cool!==0 goto :printhelpmenu
 )
-goto _init
 endlocal disabledelayedexpansion
+goto _init
 :printhelpmenu
 echo:The following are valid FINDSTR handles in the context of this
 echo:batch script:
