@@ -63,12 +63,12 @@ Output:
 ```
 PierceX
 ```
-- Example #5 ```extract.bat /c:  "H"  " " "x x yH ELLO"```
+- Example #5 ```extract.bat /c:  "H"  " " "x x yH EL LO"```
 
 Output:
 ```
 x x y
-ELLO
+EL LO
 ```
 
 ### Noob Heaven :hear_no_evil::hear_no_evil::hear_no_evil:
@@ -85,6 +85,6 @@ set file_name="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"
 for /f "delims=" %%i in ('extract.bat /r "()" "[1-2][0-9][0-9][0-9]" %file_name%') do set year=%%i
 REM year of song is %year%
 ```
-
+<b>Known bugs:</b>It skips the leading spaces in strings,
 
 (C) Readme . Rest in Peace `☮`
