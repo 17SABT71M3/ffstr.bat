@@ -57,8 +57,6 @@ echo:  /B         Matches pattern if at the beginning of a line.
 echo:  /E         Matches pattern if at the end of a line.
 echo:  /L         Uses search strings literally.
 echo:  /R         Uses search strings as regular expressions.
-echo:  /S         Searches for matching files in the current directory and all
-echo:             subdirectories.
 echo:  /I         Specifies that the search is not to be case-sensitive.
 echo:  /X         Prints lines that match exactly.
 echo:  /V         Prints only lines that do not contain a match.
