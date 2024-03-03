@@ -18,28 +18,31 @@ set first=!thirst:~0,1!
 if "!first!" NEQ "/" goto :printhelpmenu
 set local=
 set /a cis=0
-for /l %%i in (1,1,10) do set something=!thirst:~%%i,1!&(if /i "&!something!&" =="&c&" set /a cis=1)&if /i "&!something!&" NEQ "&c&" if "&!something!&" NEQ "&:&" set local=!local! !something!
+for /l %%i in (1,1,10) do set something=!thirst:~%%i,1!&(if /i "&!something!&" =="&?&" set /a cool=1&goto :printhelpmenu)&(if /i "&!something!&" =="&c&" set /a cis=1)&if /i "&!something!&" NEQ "&c&" if "&!something!&" NEQ "&:&" set local=!local! !something!
 set prepare=
 if %cis%==1 set local=!local! c:
 if %cis%==1 for %%i in (%local%) do set prepare=!prepare!%%i
+echo !local!==local
 for %%i in (%local%) do (
 set /a cool=0
 if /i "&%%i&"=="&c:&" set /a cool=1
-if /i "&%%i&"=="&b&" set /a cool=1
-if /i "&%%i&"=="&e&" set /a cool=1
-if /i "&%%i&"=="&l&" set /a cool=1
-if /i "&%%i&"=="&r&" set /a cool=1
-if /i "&%%i&"=="&i&" set /a cool=1
-if /i "&%%i&"=="&x&" set /a cool=1
-if /i "&%%i&"=="&v&" set /a cool=1
+if /i "&%%i&"=="&b&"  set /a cool=1
+if /i "&%%i&"=="&e&"  set /a cool=1
+if /i "&%%i&"=="&l&"  set /a cool=1
+if /i "&%%i&"=="&r&"  set /a cool=1
+if /i "&%%i&"=="&i&"  set /a cool=1
+if /i "&%%i&"=="&x&"  set /a cool=1
+if /i "&%%i&"=="&v&"  set /a cool=1
+if /i "&%%i&"=="&?&" set /a cool=1&goto :printhelpmenu
 if !cool!==0 goto :printhelpmenu
 )
 if %cis%==1 Endlocal&set handle=/%prepare%&goto endinit
 endlocal disabledelayedexpansion
 goto _init
 :printhelpmenu
+echo:
 echo:Syntax-
-echo:"%~fnx" [handle] [delimiter] ["pattern"] ["string"]
+echo:"%~nx0" [handle] [delimiter] ["pattern"] ["string"]
 echo:The following are valid FINDSTR handles in the context of this
 echo:batch script:
 echo:  /C:        Uses specified string as a literal search string.
@@ -57,6 +60,11 @@ echo:All above handles must be combined if using more than one.
 echo:Eg. /bel OR /RI
 echo:
 echo:Not----^> /b /e /l OR /R /I
+echo:
+if defined cool if "%cool%"=="1" echo:Delimiters using Symbols that need escaping must be 
+if defined cool if "%cool%"=="1" echo:escaped respectively Eg- "^&"
+if defined cool if "%cool%"=="1" echo:"%~nx0" /?  ----^>Prints this help menu.
+if defined cool if "%cool%"=="1" echo:
 goto :eof
 :_init
 REM caution space sensitive code
