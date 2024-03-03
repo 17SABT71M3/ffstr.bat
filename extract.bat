@@ -1,5 +1,12 @@
 @echo off
 set finalupload=
+set /a countargs=0
+for %%a in (%*) do set /a countargs+=1
+if %countargs%==0 goto :continuewithargs
+if %countargs%==1 goto :continuewithargs
+if %countargs%==4 goto :continuewithargs
+goto printhelpmenu
+:continuewithargs
 set bemindfulof=%~2
  REM <WEL COME> /\Namastey0`:,
 set handle=%~1
@@ -44,7 +51,8 @@ echo:Syntax-
 echo:"%~nx0" [handle] [delimiter] ["pattern"] ["string"]
 echo:The following are valid FINDSTR handles in the context of this
 echo:batch script:
-echo:  /C:        Uses specified string as a literal search string.
+echo:  /C:        Uses the specified string as a literal search string. (Do not write
+echo:             any string after colon. See "Syntax")
 echo:  /B         Matches pattern if at the beginning of a line.
 echo:  /E         Matches pattern if at the end of a line.
 echo:  /L         Uses search strings literally.
@@ -64,18 +72,19 @@ if defined cool if "%cool%"=="1" echo:Delimiters using Symbols that need escapin
 if defined cool if "%cool%"=="1" echo:escaped respectively Eg- "^&"
 if defined cool if "%cool%"=="1" echo:"%~nx0" /?  ----^>Prints this help menu.
 if defined cool if "%cool%"=="1" echo:
+if defined cool if "%cool%"=="1" echo: @Lastly, I thank God.`
 goto :eof
 :_init
 REM caution space sensitive code
 set handle=%handle% 
 :endinit
 set string=%4
+if [%string%]==[] goto printhelpmenu
 set string=%string:^=^^%
 set string=%string:|=^|%
 set string=%string:&=^&%
 set string=%string:>=^>%
 set string=%string:<=^<%
-
 
 ReM (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
 
