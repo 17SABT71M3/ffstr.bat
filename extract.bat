@@ -38,6 +38,8 @@ if %cis%==1 Endlocal&set handle=/%prepare%&goto endinit
 endlocal disabledelayedexpansion
 goto _init
 :printhelpmenu
+echo:Syntax-
+echo:"%~fnx" [handle] [delimiter] ["pattern"] ["string"]
 echo:The following are valid FINDSTR handles in the context of this
 echo:batch script:
 echo:  /C:        Uses specified string as a literal search string.
