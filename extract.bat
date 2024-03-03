@@ -22,7 +22,6 @@ for /l %%i in (1,1,10) do set something=!thirst:~%%i,1!&(if /i "&!something!&" =
 set prepare=
 if %cis%==1 set local=!local! c:
 if %cis%==1 for %%i in (%local%) do set prepare=!prepare!%%i
-echo !local!==local
 for %%i in (%local%) do (
 set /a cool=0
 if /i "&%%i&"=="&c:&" set /a cool=1
