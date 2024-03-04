@@ -1,6 +1,6 @@
 < FINDSTR REGEX > is different in operation from regular expected regex. therefore please test your inputs and regex using FINDSTR independently to confirm the output/efficacy
 
-Let's delve into the workings of the regex itself:
+Let's delve into the workings of the script and regex itself:
 
 ```C:\Users\Anil Bapna\Desktop>extract.bat /r . "[a-z]" "HELo"```
 - The first parameter is the `FINDSTR` handle Eg. `/r`
