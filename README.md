@@ -86,7 +86,7 @@ set file_name="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"
 for /f "delims=" %%i in ('extract.bat /r "()" "[1-2][0-9][0-9][0-9]" %file_name%') do set year=%%i
 REM year of song is %year%
 ```
-- Example #2
+- Example #3
 ```
 for /f "delims=" %%i in ('ver') do for /f "delims=" %%a in ('extract.bat /r "()[] " "^[0-9.]*$" "%%i"') do set ver=%%a
 echo Windows Version is %ver%
