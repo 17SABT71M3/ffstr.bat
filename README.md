@@ -9,7 +9,12 @@ Let's delve into the workings of the script and regex itself:
 - The third parameter is the `FINDSTR`-compatible regex
 - The fourth parameter is the STRING to extract substring from.
 
-This particular batch script has built-in substitutes for `finstr`'s certain short comings. For instance, you will find it difficult if u need to specify capital or lower letters. `Findstr` has a particular way of functioning that is different from normal regexes. Example-
+### Why? the `FINDSTR` handle is used
+Using this extra parameter/option gives us the freedom to use the different `Findstr` handles such as `/c` and `/i`. Remember if `/c` is used in combination with `/r` like `/rc` then the matching is a mix of literal string and regex. This is particularly useful but you should know more about the workings of the `Findstr` Regex on that.
+
+<b>Note</b>
+
+This particular batch script has built-in substitutes for `findstr`'s certain short comings. For instance, you will find it difficult if u need to specify capital or lower letters. `Findstr` has a particular way of functioning that is different from normal regexes. Example-
 ```
 C:\Users\Anil Bapna\Desktop>extract.bat /r . "^[a-z]" "HELo hello"
 HELo
@@ -24,7 +29,7 @@ There are two substitutes defined in the batch script, namely
 
 ### Delimiters
 They are used to separate strings into 'tokens'. Delimiters are symbols or characters not part of the search, which are ignored. You have to write something as the delimiter parameter. If "" is used as the delimiter (Meaning Nothing) then the whole string is treated as One String and there is no substring to extract from it. If you have a sentence then an appropriate delimiter for example would be `" "`. (Meaning Space).
-Delimiters like `&` and `|` must always be escaped like `"^&"` and `"^|"` respectively.
+Delimiters like `&` and `|` must always be escaped like `"^&"` and `"^|"` respectively. You can specify more than one delimiters by combining them like - `"^& "` (contains the character & and space)
 
 ### Wi-ki  :newspaper:
 - Example #1 ```extract.bat /r " " "^[Capital]" "Hello hollow oh so dear Mister Pierce"```
@@ -64,7 +69,7 @@ Output:
 ```
 PierceX
 ```
-- Example #5 ```extract.bat /c:  "H"  " " "x x yH EL LO"```
+- Example #5 ```extract.bat /c  "H"  " " "x x yH EL LO"```
 
 Output:
 ```
