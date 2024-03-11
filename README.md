@@ -23,7 +23,7 @@ There are two substitutes defined in the batch script, namely
 
 
 ### Delimiters
-Delimiters are symbols that are not part of the search. They are used to separate strings into 'tokens'. You have to write something as the delimiter parameter. If you want to continue using space write the delimiter as `" "`.
+They are used to separate strings into 'tokens'. Delimiters are symbols or characters not part of the search, which are ignored. You have to write something as the delimiter parameter. If "" is used as the delimiter (Meaning Nothing) then the whole string is treated as One String and there is no substring to extract from it. If you have a sentence then an appropriate delimiter for example would be `" "`. (Meaning Space).
 Delimiters like `&` and `|` must always be escaped like `"^&"` and `"^|"` respectively.
 
 ### Wi-ki  :newspaper:
