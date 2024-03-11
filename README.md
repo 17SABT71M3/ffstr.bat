@@ -42,7 +42,7 @@ Hello
 Mister
 Pierce
 ```
-- Example #2 ```extract.bat /r " " "^[^Capital]*$" "Hello hollow oh so dear Mister PierceX ------"```
+- Example #2 ```extract.bat /r " " "^[LOWER]*$" "Hello hollow oh so dear Mister PierceX ------"```
 
 Output:
 ```
@@ -52,7 +52,7 @@ so
 dear
 ------
 ```
-- Example #3 ```extract.bat /r " " "[^Capital]" "Hello hollow oh so dear Mister PierceX ------"```
+- Example #3 ```extract.bat /r " " "[LOWER]" "Hello hollow oh so dear Mister PierceX ------"```
 
 Output:
 ```
