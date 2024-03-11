@@ -91,7 +91,12 @@ REM year of song is %year%
 for /f "delims=" %%i in ('ver') do for /f "delims=" %%a in ('extract.bat /r "()[] " "^[0-9.]*$" "%%i"') do set ver=%%a
 echo Windows Version is %ver%
 ```
-
+- Example #4
+```
+set ipadr=1.1.1.1
+for /f "tokens=*" %%i in ('ping -n %ipadr% ^| findstr /ir "Reply from" ^| find /i "ms"') do for /f "tokens=*" %%a in ('extract.bat /r "^<^>^= " "^[0-9]*ms$" "%i"') do echo %%a
+REM 35ms
+```
 ~<b>Known bugs:</b> It skips the leading spaces in strings,~
 
 Praise The Lord !`✞` for helping me thru this Project
