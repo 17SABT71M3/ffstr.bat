@@ -14,7 +14,7 @@ Using this extra parameter/option gives us the freedom to use the different `Fin
 
 <b>Note</b>
 
-This particular batch script has built-in substitutes for `findstr`'s certain short comings. For instance, you will find it difficult if u need to specify capital or lower letters. `Findstr` has a particular way of functioning that is different from normal regexes. Example-
+This particular batch script has built-in substitutes for `findstr`'s REGEX certain short comings. For instance, you will find it difficult if u need to specify capital or lower letters. `Findstr` has a particular way of functioning that is different from normal regexes. Example-
 ```
 C:\Users\Anil Bapna\Desktop>extract.bat /r . "^[a-z]" "HELo hello"
 HELo
