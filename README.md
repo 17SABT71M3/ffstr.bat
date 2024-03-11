@@ -20,7 +20,9 @@ C:\Users\Anil Bapna\Desktop>extract.bat /r . "^[a-z]" "HELo hello"
 HELo
 hello
 ```
-`Findstr` operates differently with CAPITAL and LOWER Case regexes.
+Despite mentioning the lower range of [a-z] the result output is both letters starting with Capital H and lower h.
+`Findstr` operates differently with such regexes. There are some substitutes built into this script as a work around.
+
 There are two substitutes defined in the batch script, namely
 - `[Capital]`
 - `[LOWER]`
