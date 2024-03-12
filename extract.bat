@@ -1,6 +1,12 @@
 @echo off
 set finalupload=
-
+set /a countargs=0
+for %%a in (%*) do set /a countargs+=1
+if %countargs%==0 goto :continuewithargs
+if %countargs%==1 goto :continuewithargs
+if %countargs%==4 goto :continuewithargs
+goto printhelpmenu
+:continuewithargs
 set bemindfulof=%~2
  REM <WEL COME> /\Namastey0`:,
 set handle=%~1
@@ -95,12 +101,12 @@ rem echo:Hold on to your Horses.......!
 rem echo:It's time for some token frenzy..
 set whoami=%%i
 set /a token=1
-if "%bemindfulof%"=="[Doublequote]" goto whammythegreatLORD
 set /a continue=0
 :loop
 set /a uploadtaken=1
 set /a found=0
 set upload=
+
 for /f "tokens=%token% delims=%bemindfulof%" %%i in (%string%) do set /a found=1&echo %%i|findstr %handle%%regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
 if %uploadtaken% NEQ 1 goto continue
 for /f "tokens=%token% delims=%bemindfulof%" %%i in (%string%) do set /a found=1&echo "%%i"|findstr %handle%%regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
@@ -111,37 +117,3 @@ set /a token+=1
 goto :loop
 :end
 ::SWEET::DREAMS`
-:whammythegreatLORD
-set /a try=0
-set /a skip=0
-set /a token=1
-echo Regex =  %regex%
-:doublewhammySEENAZOREE
-echo HAHAH
-set /a found=0
-set /a uploadtaken=1
-set /a quit=0
-
-if %skip% NEQ 0 goto zero
-for /f  delims^=^"^ tokens^=%token% %%i in ('type standard.txt') do set /a found=1&echo %%i|findstr %handle%%regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)&goto return
-
-goto return
-
-:zero
-
-for /f skip^=%skip%^ delims^=^"^ tokens^=%token% %%i in ('type standard.txt') do set /a found=1&echo %%i|findstr %handle%%regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)&goto return
-:return
-echo FOUND %found% uploadtaken %uploadtaken% token %token% skip %skip%
-if %found%==0 set /a quit+=1
-if %quit% GEQ 2 goto :eof
-if %uploadtaken%==0 echo:%upload%
-if %uploadtaken%==0 set /a token+=1&goto :doublewhammySEENAZOREE
-if %uploadtaken%==1 set /a skip+=1&set /a token=1&set /a try=0&echo:&goto :doublewhammySEENAZOREE
-REM if %uploadtaken%==1 set /a try+=1&set /a token+=1&goto :doublewhammySEENAZOREE
-
-
-
-
-
-
-
