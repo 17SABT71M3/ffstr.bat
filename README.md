@@ -1,6 +1,12 @@
 NOTE: < FINDSTR REGEX > is different in operation from regular expected regex. therefore please test your inputs and regex using FINDSTR independently to confirm the output/efficacy
 _________
 
+<b>Similarities with FINDSTR syntax</b>
+<br>Findstr Syntax: 
+`findstr </option> "[pattern]" "optional:filename"`
+<br>Extract.bat Syntax:
+`extract.bat </option> "delimiter" "[pattern]" "STRING"`
+
 Let's delve into the workings of the script and regex itself:
 
 ```C:\Users\Anil Bapna\Desktop>extract.bat /r . "[a-z]" "HELo"```
