@@ -7,37 +7,31 @@ _________
 <br>Extract.bat Syntax:
 `extract.bat </option> "delimiter" "[pattern]" "STRING"`
 
-Let's delve into the workings of the script:
-
-```C:\Users\Anil Bapna\Desktop>extract.bat /r . "[a-z]" "HELo"```
-- The first parameter is the `FINDSTR` handle Eg. `/r`
-- The second parameter is the delimiter
-- The third parameter is the `FINDSTR`-compatible regex
-- The fourth parameter is the STRING to extract substring from.
-
-### Why? the `FINDSTR` handle is used
+### Why the `FINDSTR` handle is used
 Using this extra parameter/option gives us the freedom to use the different `Findstr` handles such as `/c` and `/i`. Remember if `/c` is used in combination with `/r` like `/rc` then the matching is a mix of literal string and regex. This is particularly useful but you should know more about the workings of the `Findstr` Regex on that.
 
-<b>Note</b>
-
-This particular batch script has built-in substitutes for `findstr`'s REGEX certain short comings. For instance, you will find it difficult if u need to specify capital or lower letters. `Findstr` has a particular way of functioning that is different from normal regexes. Example-
+### Regex Substitutes
+This particular batch script has built-in substitutes for `findstr`'s REGEX certain short comings. For instance, you will find it difficult if u need to specify capital or lower letters. `Findstr` has a particular way of functioning that is different from normal regexes and by that there are certain shortcomings. Example-
 ```
 C:\Users\Anil Bapna\Desktop>extract.bat /r . "^[a-z]" "HELo hello"
 HELo
 hello
 ```
 Despite mentioning the lower range of [a-z] the result output is both letters starting with Capital H and lower h.
-`Findstr` operates differently with such regexes. There are some substitutes built into this script as a work around.
-
-There are two substitutes defined in the batch script, namely
+`Findstr` operates differently with such regexes. As such, There are substitutes built into this script for there to be a work around.
+, namely
 - `[Capital]`
 - `[LOWER]`
 
+### Script Syntax Quick Lookup
+- The first parameter is the `FINDSTR` handle Eg. `/r`
+- The second parameter is the delimiter
+- The third parameter is the `FINDSTR`-compatible regex
+- The fourth parameter is the STRING to extract substring from.
 
 
-### Delimiters
-They are used to separate strings into 'tokens'. Delimiters are symbols or characters not part of the search, which are ignored. You have to write something as the delimiter parameter. If "" is used as the delimiter (Meaning Nothing) then the whole string is treated as One String and there is no substring to extract from it. If you have a sentence then an appropriate delimiter for example would be `" "`. (Meaning Space).
-Delimiters like `&` and `|` must always be escaped like `"^&"` and `"^|"` respectively. You can specify more than one delimiters by combining them like - `"^& "` (contains the character & and space)
+### What are Delimiters
+They are used to separate strings into 'tokens'. Since the given string is split into individual sub-strings and then the pattern matching is done. Delimiters are  not part of the search hence ignored. You have to write the delimiter parameter. If "" is used as the delimiter (Meaning Nothing) then the whole string is treated as One String and there is no substring to extract from it. If you have a sentence then one possible delimiter can be WHITESPACE `" "`. If you have a string like `"https://www.yahoo.com/search?q=HELLO"` you may want to use "^=" as the delimiter is your looking for the sub-string `HELLO`. All characters that are escaped in batch scripts like `&` and `|` need to be escaped like `"^&"` and `"^|"` respectively for the script to work. You can specify more than one delimiters by combining them like - `"^& "` (contains the `&` character and space)
 
 ### Output Examples  :newspaper:
 - Example #1 ```extract.bat /r " " "^[Capital]" "Hello hollow oh so dear Mister Pierce"```
