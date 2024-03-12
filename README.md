@@ -7,7 +7,7 @@ _________
 <br>Extract.bat Syntax:
 `extract.bat </option> "delimiter" "[pattern]" "STRING"`
 
-Let's delve into the workings of the script and regex itself:
+Let's delve into the workings of the script:
 
 ```C:\Users\Anil Bapna\Desktop>extract.bat /r . "[a-z]" "HELo"```
 - The first parameter is the `FINDSTR` handle Eg. `/r`
