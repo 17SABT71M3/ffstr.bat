@@ -33,7 +33,7 @@ There are two substitutes defined in the batch script, namely
 They are used to separate strings into 'tokens'. Delimiters are symbols or characters not part of the search, which are ignored. You have to write something as the delimiter parameter. If "" is used as the delimiter (Meaning Nothing) then the whole string is treated as One String and there is no substring to extract from it. If you have a sentence then an appropriate delimiter for example would be `" "`. (Meaning Space).
 Delimiters like `&` and `|` must always be escaped like `"^&"` and `"^|"` respectively. You can specify more than one delimiters by combining them like - `"^& "` (contains the character & and space)
 
-### Wi-ki  :newspaper:
+### Output Examples  :newspaper:
 - Example #1 ```extract.bat /r " " "^[Capital]" "Hello hollow oh so dear Mister Pierce"```
 
 Output:
