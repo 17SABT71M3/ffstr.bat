@@ -1,12 +1,5 @@
 @echo off
 set finalupload=
-set /a countargs=0
-for %%a in (%*) do set /a countargs+=1
-if %countargs%==0 goto :continuewithargs
-if %countargs%==1 goto :continuewithargs
-if %countargs%==4 goto :continuewithargs
-goto printhelpmenu
-:continuewithargs
 set bemindfulof=%~2
  REM <WEL COME> /\Namastey0`:,
 set handle=%~1
@@ -46,7 +39,7 @@ goto _init
 :printhelpmenu
 echo:
 echo:Syntax-
-echo:"%~nx0" [handle] [delimiter] ["pattern"] ["string"]
+echo:"%~nx0" [/option] [delimiter] ["pattern"] ["string"]
 echo:The following are valid FINDSTR handles in the context of this
 echo:batch script:
 echo:  /C:        Uses the specified pattern as a literal search string. (Do not write
@@ -64,11 +57,11 @@ echo:Eg. /bel OR /RI
 echo:
 echo:Not----^> /b /e /l OR /R /I
 echo:
-if defined cool if "%cool%"=="1" echo:Delimiters using Symbols that need escaping must be 
-if defined cool if "%cool%"=="1" echo:escaped respectively Eg- "^&"
-if defined cool if "%cool%"=="1" echo:"%~nx0" /?  ----^>Prints this help menu.
+if defined cool if "%cool%"=="1" echo: Delimiters using Symbols that need escaping must be 
+if defined cool if "%cool%"=="1" echo: escaped.         Eg- "^&"
+if defined cool if "%cool%"=="1" echo: "%~nx0" /?  ----^>Prints this help menu.
 if defined cool if "%cool%"=="1" echo:
-if defined cool if "%cool%"=="1" echo: @Lastly, I thank God.`
+if defined cool if "%cool%"=="1" echo:@Lastly, I thank God.`
 goto :eof
 :_init
 REM caution space sensitive code
