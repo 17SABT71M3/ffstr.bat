@@ -52,6 +52,14 @@ List of Delimiters that need escaping, not exhaustive:
 | ^   | "^^"   |
 | =   | "^="   |
 
+### Testing using `findstr`
+Make your own tests using the appropriate handle/option to test whether your regex/pattern works to find your sub-string.
+Examples -
+```
+echo sub-string|findstr /r "pattern"
+echo sub-string|findstr /c:"string"
+echo sub-string|findstr /Ic:"String"
+```
 
 ### Output Examples  :newspaper:
 - Example #1 ```extract.bat /r " " "^[Capital]" "Hello hollow oh so dear Mister Pierce"```
