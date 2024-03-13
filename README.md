@@ -23,6 +23,14 @@ Despite mentioning the lower range of [a-z] the result output is both letters st
 - `[Capital]`
 - `[LOWER]`
 
+| Character       | Syntax          |
+| --------------- | --------------- |
+| \    | "\\\\"    |
+| [   | if `\r` is used bracket must be closed to represent a valid character set inside it Eg. `"[abc]"`   |
+| A   | `"[A]"` would represent capital A whereas either `"[a-z]"` or `"[A-Z]"` would match both lower and capital   |
+| A or b   | `"[Ab]"` represents a character class and represents a single character Either capital A or lower b  |
+| Space " "    | if you are looking for whitespace use " " and the `/c` option. (can be clubbed with the `\r` option for half regex half literal matches like this `\rc` )   |
+
 ### Script Syntax Quick Lookup
 - The first parameter is the `FINDSTR` handle Eg. `/r`
 - The second parameter is the delimiter
