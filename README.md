@@ -23,6 +23,8 @@ Despite mentioning the lower range of [a-z] the result output is both letters st
 - `[Capital]`
 - `[LOWER]`
 
+REGEX Notes -
+
 | Character       | Syntax          |
 | --------------- | --------------- |
 | \    | "\\\\"    |
