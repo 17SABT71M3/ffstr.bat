@@ -57,8 +57,8 @@ Make your own tests using the appropriate handle/option to test whether your reg
 Examples -
 ```
 echo sub-string|findstr /r "pattern"
-echo sub-string|findstr /c:"string"
-echo sub-string|findstr /Ic:"String"
+echo sub-string|findstr /c:"literal_pattern"
+echo sub-string|findstr /Ic:"Pattern"
 ```
 
 ### Output Examples  :newspaper:
