@@ -25,7 +25,7 @@ Despite mentioning the lower range of [a-z] the result output is both letters st
 
 REGEX Notes -
 
-| Character       | Syntax          |
+| Character       | Remarks          |
 | --------------- | --------------- |
 | \    | "\\\\"    |
 | [   | if `/r` is used bracket must be closed to represent a valid character set inside it Eg. `"[abc]"`   |
