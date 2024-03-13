@@ -33,6 +33,16 @@ Despite mentioning the lower range of [a-z] the result output is both letters st
 ### What are Delimiters
 They are used to separate strings into 'tokens'. Since the given string is split into individual sub-strings and then the pattern matching is done. Delimiters are  not part of the search hence ignored. You have to write the delimiter parameter. If "" is used as the delimiter (Meaning Nothing) then the whole string is treated as One String and there is no substring to extract from it. If you have a sentence then one possible delimiter can be WHITESPACE `" "`. If you have a string like `"https://www.yahoo.com/search?q=HELLO"` you may want to use "^=" as the delimiter is your looking for the sub-string `HELLO`. All characters that are escaped in batch scripts like `&` and `|` need to be escaped like `"^&"` and `"^|"` respectively for the script to work. You can specify more than one delimiters by combining them like - `"^& "` (contains the `&` character and space)
 
+List of Delimiters that need escaping, not exhaustive:
+
+| Character       | Syntax          |
+| --------------- | --------------- |
+| &    | "^&"    |
+| \|   | "^\|"   |
+| ^   | "^^"   |
+| =   | "^="   |
+
+
 ### Output Examples  :newspaper:
 - Example #1 ```extract.bat /r " " "^[Capital]" "Hello hollow oh so dear Mister Pierce"```
 
