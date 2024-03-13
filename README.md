@@ -88,6 +88,15 @@ Output:
 x x y
  EL LO
 ```
+- Example #6 ```extract.bat /e ";" "E" "HEEB;HXLP; EE;EEJO"```
+
+Out of the Words HEEB, HXLP, EE, EEJO we are looking for the word ending (/e option used) 
+with E.
+Output:
+```
+ EE
+```
+Notice the leading space is preserved.
 
 ### Noob Heaven :hear_no_evil::hear_no_evil::hear_no_evil:
 Simple usage in batch files.
