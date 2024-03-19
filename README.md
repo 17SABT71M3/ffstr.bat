@@ -13,7 +13,7 @@ Using this extra parameter/option gives us the freedom to use the different `Fin
 ### Regex Substitutes
 This particular batch script has built-in substitutes for `findstr`'s REGEX certain short comings. For instance, you will find it difficult if u need to specify capital or lower letters. `Findstr` has a particular way of functioning that is different from normal regexes and by that there are certain shortcomings. Example-
 ```
-C:\Users\Anil Bapna\Desktop>extract.bat /r . "^[a-z]" "HELo hello"
+C:\Users\Anil Bapna\Desktop>extract.bat /r " " "^[a-z]" "HELo hello"
 HELo
 hello
 ```
