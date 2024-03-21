@@ -28,7 +28,7 @@ REGEX Notes -
 | Character       | Remarks          |
 | --------------- | --------------- |
 | \    | "\\\\"    |
-| [   | if `/r` is used bracket must be closed to represent a valid character set inside it Eg. `"[abc]"`. But there are exceptions like: `"[[character_set]]"` or `"[]]"` are valid patterns and will not return an error.   |
+| [   | if `/r` is used bracket must be closed `]` to represent a valid character set inside it Eg. `"[abc]"`. But there are exceptions like: `"[[character_set]]"` or `"[]]"` are valid patterns and will not return an error.   |
 | A   | `"[A]"` would represent capital A whereas either `"[a-z]"` or `"[A-Z]"` would match both lower and capital   |
 | A or b   | `"[Ab]"` represents a character class and represents a single character Either capital A or lower b  |
 | Space " "    | if you are looking for whitespace " " use the `/c` option. (can be clubbed with the `/r` option for half regex half literal matches `/rc` )   |
