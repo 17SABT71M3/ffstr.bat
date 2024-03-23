@@ -118,7 +118,7 @@ Output:
 ```
 Notice the leading space is preserved.
 
-### Noob Heaven :hear_no_evil::hear_no_evil::hear_no_evil:
+### Noob Heaven :hear_no_evil::hear_no_evil:🥳
 Simple usage in batch files.
 - Example #1
 ```
