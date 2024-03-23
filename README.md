@@ -145,5 +145,5 @@ REM 35ms
 ```
 ~<b>Known bugs:</b> It skips the leading spaces in strings,~
 
-Praise The Lord !`✞` for helping me thru this Project
+Praise The Lord !`✞` xxxfor helping me thru this Project
 <br>(C) Readme . Rest in Peace `☮`
