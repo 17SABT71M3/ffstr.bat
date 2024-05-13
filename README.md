@@ -1,4 +1,5 @@
-<p align="center">✞ Live Guilt Free and Without Pressure</p>
+<p align="center"><img src="https://github.com/17SABT71M3/ffstr.bat/blob/475e50d4692955fa92a766266b24a0869b84a432/the_line.png"><img>
+<br>✞ Live Guilt Free and Without Pressure</p>
 
 NOTE: < FINDSTR REGEX > is different in operation from regular expected regex. therefore please test your inputs and regex using FINDSTR independently to confirm the output/efficacy
 _________
