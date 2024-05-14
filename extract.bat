@@ -6,8 +6,8 @@ set handle=%~1
 
 
 set regex=%3
-  set regex=%regex:[Capital]=[ABCDEFGHIJKLMNOPQRSTUVWXYZ]%
-    set regex=%regex:[LOWER]=[abcdefghijklmnopqrstuvwxyz]%
+  set regex=%regex:[CAPITAL]=[ABCDEFGHIJKLMNOPQRSTUVWXYZ]%
+    set regex=%regex:[lower]=[abcdefghijklmnopqrstuvwxyz]%
 
 if /i "%handle%"=="/c:" goto endinit
 setlocal enabledelayedexpansion
