@@ -1,5 +1,5 @@
 <p align="center"><img src="https://github.com/17SABT71M3/ffstr.bat/blob/475e50d4692955fa92a766266b24a0869b84a432/the_line.png"><img>
-<br>✞ Live Guilt Free and Without Pressure</p>
+<br>✞ Live Guilt Free and Without Pressure<sup>#</sup></p>
 
 NOTE: < FINDSTR REGEX > is different in operation from regular expected regex. therefore please test your inputs and regex using FINDSTR independently to confirm the output/efficacy
 _________
@@ -128,6 +128,6 @@ REM 35ms
 ```
 ~<b>Known bugs:</b> It skips the leading spaces in strings,~
 
-Praise The Lord !`✞` xxxfor helping me thru this Project
+#Praise The Lord !`✞` xxxfor helping me thru this Project
 <br>(C) Readme . Rest in Peace `☮`
 <br><b>Pray for me!!
