@@ -23,8 +23,8 @@ hello
 Despite mentioning the lower range of [a-z] the result output is both letters starting with Capital H and lower h.
 `Findstr` operates differently with such regexes. As such, There are substitutes built into this script for there to be a work around.
 , namely
-- `[Capital]`
-- `[LOWER]`
+- `[CAPITAL]`
+- `[lower]`
 
 REGEX Notes -
 
