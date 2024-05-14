@@ -65,7 +65,7 @@ echo sub-string|findstr /Ic:"Pattern"
 ```
 
 ### Output Examples  :newspaper:
-- Example #1 ```extract.bat /r " " "^[Capital]" "Hello hollow oh so dear Mister Pierce"```
+- Example #1 ```extract.bat /r " " "^[CAPITAL]" "Hello hollow oh so dear Mister Pierce"```
 
 Output:
 ```
@@ -73,7 +73,7 @@ Hello
 Mister
 Pierce
 ```
-- Example #2 ```extract.bat /r " " "^[LOWER]*$" "Hello hollow oh so dear Mister PierceX ------"```
+- Example #2 ```extract.bat /r " " "^[lower]*$" "Hello hollow oh so dear Mister PierceX ------"```
 
 Output:
 ```
@@ -83,36 +83,18 @@ so
 dear
 ------
 ```
-- Example #3 ```extract.bat /r " " "[LOWER]" "Hello hollow oh so dear Mister PierceX ------"```
-
-Output:
-```
-Hello
-hollow
-oh
-so
-dear
-Mister
-PierceX
-------
-```
-- Example #4 ```extract.bat /r " " "[Capital]$" "Hello hollow oh so dear Mister PierceX ------"```
-
-Output:
-```
-PierceX
-```
-- Example #5 ```extract.bat /c  "H"  " " "x x yH EL LO"```
+- Example #3 ```extract.bat /c  "H"  " " "x x yH EL LO"```
+<br>Note: the delimiter here used is "H"
 
 Output:
 ```
 x x y
  EL LO
 ```
-- Example #6 ```extract.bat /e ";" "E" "HEEB;HXLP; EE;EEJO"```
-
-Out of the Words HEEB, HXLP, EE, EEJO we are looking for the word ending (/e option used) 
+- Example #4 ```extract.bat /e ";" "E" "HEEB;HXLP; EE;EEJO"```
+<br>Note: Out of the Words HEEB, HXLP, EE, EEJO we are looking for the word ending (/e option used) 
 with E.
+
 Output:
 ```
  EE
