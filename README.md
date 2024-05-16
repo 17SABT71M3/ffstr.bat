@@ -4,7 +4,7 @@
 NOTE: < FINDSTR REGEX > is different in operation from regular expected regex. therefore please test your inputs and regex using FINDSTR independently to confirm the output/efficacy
 _________
 
-<b>Similarities with FINDSTR syntax</b>
+<b>syntax</b>
 <br>Findstr Syntax: 
 `findstr </option> "[pattern]" "optional:filename"`
 <br>Extract.bat Syntax:
