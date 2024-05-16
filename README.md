@@ -128,6 +128,6 @@ REM 35ms
 ```
 ~<b>Known bugs:</b> It skips the leading spaces in strings,~
 
-<a id="abcd"><sup>#</sup>Praise The Lord !`✞` xxxfor helping me thru this Project</a>
+<a id="abcd"><sup>#</a></sup>Praise The Lord !`✞` xxxfor helping me thru this Project
 <br>(C) Readme . Rest in Peace `☮`
 <br><b>Pray for me!!
