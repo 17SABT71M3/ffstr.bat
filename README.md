@@ -14,14 +14,14 @@ _________
 Using this extra parameter/option gives us the freedom to use the different `Findstr` handles such as `/c` and `/i`. Remember if `/c` is used in combination with `/r` like `/rc` then the matching is a mix of literal string and regex. This is particularly useful but you should know more about the workings of the `Findstr` Regex on that.
 
 ### Regex Substitutes
-This particular batch script has built-in substitutes for `findstr`'s REGEX certain short comings. For instance, you will find it difficult if u need to specify capital or lower letters. `Findstr` has a particular way of functioning that is different from normal regexes and by that there are certain shortcomings. Example-
+This particular batch script has built-in substitutes for `findstr`'s REGEX certain short comings. in particular, capital or lower letters. `Findstr` has a particular way of functioning that is different from normal regexes there are certain shortcomings. Example-
 ```
 C:\Users\Anil Bapna\Desktop>extract.bat /r " " "^[a-z]" "HELo hello"
 HELo
 hello
 ```
-Despite mentioning the lower range of [a-z] the result output is both letters starting with Capital H and lower h.
-`Findstr` operates differently with such regexes. As such, There are substitutes built into this script for there to be a work around.
+Despite the lower case of [a-z] the result output is both letters starting with Capital H and lower h.
+`Findstr` operates differently with such regexes. There are substitutes built into this script for there to be a work around.
 , namely
 - `[CAPITAL]`
 - `[lower]`
