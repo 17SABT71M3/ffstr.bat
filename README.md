@@ -55,6 +55,10 @@ List of Delimiters that need escaping, not exhaustive:
 | ^   | "^^"   |
 | =   | "^="   |
 
+<b>NOTE:</b>If you are using space " " as a delimiter in addition to another delimiter/s
+please make sure to keep space at the end of the expression. For eg. `"() "` contains
+the delimiters `(`  `)`  and whitespace " ".
+
 ### <a id="findstr"></a>Testing using `findstr`
 Make your own tests using the appropriate handle/option to test whether your regex/pattern works to find your sub-string.
 Examples -
