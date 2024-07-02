@@ -9,6 +9,7 @@ _________
 `findstr </option> "[pattern]" "optional:filename"`
 <br>Extract.bat Syntax:
 `extract.bat </option> "delimiter" "[pattern]" "STRING"`
+<br><b>limitation</b> Cannot work with a string containing double quotes `"`
 
 ### Why the `FINDSTR` handle is used
 Using this extra parameter/option gives us the freedom to use the different `Findstr` handles such as `/c` and `/i`. Remember if `/c` is used in combination with `/r` like `/rc` then the matching is a mix of literal string and regex. This is particularly useful but you should know more about the workings of the `Findstr` Regex on that. (See: <a href="#findstr">testing using Findstr</a>)
