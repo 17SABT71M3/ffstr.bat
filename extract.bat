@@ -3,7 +3,7 @@ set finalupload=
 set bemindfulof=%~1
  REM <WEL COME> /\Namastey0`:,
 set handle=%~2
-
+set cool=0
 
 set regex=%3
   set regex=%regex:[CAPITAL]=[ABCDEFGHIJKLMNOPQRSTUVWXYZ]%
@@ -12,10 +12,10 @@ set regex=%3
 if /i "%handle%"=="/c:" goto endinit
 setlocal enabledelayedexpansion
 set thirst=!handle!
-set first=!thirst:~0,1!
-if "!first!" NEQ "/" goto :printhelpmenu
+
 set local=
 set /a cis=0
+set helphim=0
 for /l %%i in (1,1,10) do set something=!thirst:~%%i,1!&(if /i "&!something!&" =="&?&" set /a cool=1&goto :printhelpmenu)&(if /i "&!something!&" =="&c&" set /a cis=1)&if /i "&!something!&" NEQ "&c&" if "&!something!&" NEQ "&:&" set local=!local! !something!
 set prepare=
 if %cis%==1 set local=!local! c:
@@ -30,13 +30,14 @@ if /i "&%%i&"=="&r&"  set /a cool=1
 if /i "&%%i&"=="&i&"  set /a cool=1
 if /i "&%%i&"=="&x&"  set /a cool=1
 if /i "&%%i&"=="&v&"  set /a cool=1
-if /i "&%%i&"=="&?&" set /a cool=1&goto :printhelpmenu
 if !cool!==0 goto :printhelpmenu
 )
 if %cis%==1 Endlocal&set handle=/%prepare%&goto endinit
 endlocal disabledelayedexpansion
 goto _init
 :printhelpmenu
+if "%bemindfulof%"=="/?" set /a cool=1
+if "%bemindfulof%"=="/h" goto authorinfo
 echo:
 echo:Syntax-
 echo:"%~nx0" [delimiter] [/option] ["pattern"] ["string"] {OPTIONAL:[/last][/reverse]}
@@ -52,17 +53,23 @@ echo:  /I         Specifies that the search is not to be case-sensitive.
 echo:  /X         Prints sub-strings that match exactly.
 echo:  /V         Prints sub-strings that do not contain a match.
 echo:  /?         help menu
+echo:  /h         author information
 echo:
 echo:All above handles must be combined if using more than one.
 echo:Eg. /bel OR /RI
 echo:
 echo:Not----^> /b /e /l OR /R /I
 echo:
-if defined cool if "%cool%"=="1" echo: Delimiters using Symbols that need escaping must be 
-if defined cool if "%cool%"=="1" echo: escaped.         Eg- "^&"
-if defined cool if "%cool%"=="1" echo: "%~nx0" /?  ----^>Prints this help menu.
-if defined cool if "%cool%"=="1" echo:
-if defined cool if "%cool%"=="1" echo:@Lastly, I thank God.`
+if %cool%==1 echo: Delimiters using Symbols that need escaping must be 
+if %cool%==1 echo: escaped.         Eg- "^&"
+if %cool%==1 echo: "%~nx0" /?  ----^>Prints this help menu.
+if %cool%==1 echo:
+goto :eof
+:authorinfo
+echo:Name: Puneet Bapna
+echo:Twitter:
+echo:
+echo: Lastly, I thank God
 goto :eof
 :_init
 REM caution space sensitive code
