@@ -128,6 +128,14 @@ echo Windows Version is %ver%
 ```
 - Example #4
 ```
+set url=https://www.yahoo.com/search?q=HELLO+MISTER
+extract.bat "=+" /r "[a-z]" "https://www.yahoo.com/search?q=HELLO+MISTER" /reverse
+REM MISTER
+REM HELLO
+REM https://www.yahoo.com/search?q
+```
+- Example #5
+```
 set ipadr=1.1.1.1
 for /f "tokens=*" %%i in ('ping -n %ipadr% ^| findstr /ir "Reply from" ^| find /i "ms"') do for /f "tokens=*" %%a in ('extract.bat /r "^<^>^= " "^[0-9]*ms$" "%i"') do echo %%a
 REM 35ms
