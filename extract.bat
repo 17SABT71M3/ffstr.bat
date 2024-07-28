@@ -1,7 +1,8 @@
 @echo off
 set finalupload=
-set bemindfulof=%~2
-set handle=%~1
+set bemindfulof=%~1
+ REM <WEL COME> /\Namastey0`:,
+set handle=%~2
 
 
 set regex=%3
@@ -38,7 +39,7 @@ goto _init
 :printhelpmenu
 echo:
 echo:Syntax-
-echo:"%~nx0" [/option] [delimiter] ["pattern"] ["string"]
+echo:"%~nx0" [delimiter] [/option] ["pattern"] ["string"] {OPTIONAL:[/last][/reverse]}
 echo:The following are valid FINDSTR handles in the context of this
 echo:batch script:
 echo:  /C:        Uses the specified pattern as a literal search string. (Do not write
@@ -50,6 +51,7 @@ echo:  /R         Uses search strings as regular expressions.
 echo:  /I         Specifies that the search is not to be case-sensitive.
 echo:  /X         Prints sub-strings that match exactly.
 echo:  /V         Prints sub-strings that do not contain a match.
+echo:  /?         help menu
 echo:
 echo:All above handles must be combined if using more than one.
 echo:Eg. /bel OR /RI
@@ -74,22 +76,56 @@ set string=%string:&=^&%
 set string=%string:>=^>%
 set string=%string:<=^<%
 
+set reverse=0
+set last=0
+set onlyonce=1
+if "%~5" NEQ "" if "%~5"=="/reverse" (set reverse=1) else (set reverse=0)
+if "%~5" NEQ "" if "%~5"=="/last" (set last=1) else (set last=0)
+
+
+REM echo Delimiter = "%bemindfulof% "
+REM echo regex = %regex%
+REM echo string= %string%
+
+
+REM "[[A-Za-z]*]"
+REM "Seventh Son of a Seventh Son"
+
+rem echo:be mindful all you sons!!
+rem echo:Hold on to your Horses.......!
+
+rem echo:It's time for some token frenzy..
+rem echo:HalleLuyah
 
 set whoami=%%i
 set /a token=1
 set /a continue=0
+
+goto loop
+:see
+if %found%==0  goto :eof
+if %uploadtaken%==0 if %last%==1 set lastupload=%upload%
+exit /b
+:printonce
+if %onlyonce%==1 for /f "delims=" %%i in (%lastupload%) DO for /f "delims=" %%a in ('echo:%%i') do echo %%a
+set /a onlyonce=0
+exit /b
 :loop
 set /a uploadtaken=1
 set /a found=0
+
 set upload=
 
 for /f "tokens=%token% delims=%bemindfulof%" %%i in (%string%) do set /a found=1&echo %%i|findstr %handle%%regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
-if %uploadtaken% NEQ 1 goto continue
-for /f "tokens=%token% delims=%bemindfulof%" %%i in (%string%) do set /a found=1&echo "%%i"|findstr %handle%%regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
+
 :continue
-if %uploadtaken%==0 for /f "delims=" %%i in (%upload%) DO for /f "delims=" %%a in ('echo:%%i') do echo %%a
-if %found%==0  goto :eof
+call :see
+
 set /a token+=1
-goto :loop
+if %reverse%==1 if %uploadtaken%==0 for /f "delims=" %%i in (%upload%) DO for /f "delims=" %%a in ('echo:%%i') do call :loop & echo %%a
+if %last%==1 if %uploadtaken%==0 call :loop & call :printonce
+if %reverse%==0 if %last%==0 if %uploadtaken%==0  for /f "delims=" %%i in (%upload%) DO for /f "delims=" %%a in ('echo:%%i') do echo:%%a
+if %found%==1 goto loop
+
 :end
 ::SWEET::DREAMS`
