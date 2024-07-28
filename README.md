@@ -112,6 +112,7 @@ Simple usage in batch files.
 ```
 set file_name="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"
 for /f "delims=" %%i in ('extract.bat /r " " "[[a-z]]" %file_name%') do set removable_part=%%i
+REM removable_part=[ZjphaXXEU9o]
 CALL set file_name=%%filename:%removable_part%=%%
 ```
 - Example #2
