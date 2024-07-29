@@ -129,10 +129,8 @@ echo Windows Version is %ver%
 - Example #4
 ```
 set url=https://www.yahoo.com/search?q=HELLO+MISTER
-extract.bat "=+" /r "[a-z]" "https://www.yahoo.com/search?q=HELLO+MISTER" /reverse
-REM MISTER
-REM HELLO
-REM https://www.yahoo.com/search?q
+for /f "tokens=*" %%i in ('extract.bat "=" /r "[a-z]" "https://www.yahoo.com/search?q=HELLO+MISTER" /last') do set search_term=%%i
+REM set search_term=HELLO+MISTER
 ```
 - Example #5
 ```
