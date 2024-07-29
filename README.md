@@ -134,6 +134,12 @@ REM set search_term=HELLO+MISTER
 ```
 - Example #5
 ```
+set url=https://www.youtube.com/watch?v=bhH5M_HH2k4
+for /f "tokens=*" %%i in ('extract.bat "=" /r "[a-z0-9]" "%url%" /last') do set video_id=%%i
+REM video_id bhH5M_HH2k4
+```
+- Example #6
+```
 set ipadr=1.1.1.1
 for /f "tokens=*" %%i in ('ping -n %ipadr% ^| findstr /ir "Reply from" ^| find /i "ms"') do for /f "tokens=*" %%a in ('extract.bat /r "^<^>^= " "^[0-9]*ms$" "%i"') do echo %%a
 REM 35ms
