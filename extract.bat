@@ -45,13 +45,13 @@ echo:The following are valid FINDSTR handles in the context of this
 echo:batch script:
 echo:  /C:        Uses the specified pattern as a literal search string. (Do not write
 echo:             any string or pattern after colon. See "Syntax")
-echo:  /B         Matches pattern if at the beginning.
-echo:  /E         Matches pattern if at the end.
+echo:  /B         Matches pattern at the beginning.
+echo:  /E         Matches pattern at the end.
 echo:  /L         Uses search strings literally.
 echo:  /R         Uses search strings as regular expressions.
-echo:  /I         Specifies that the search is not to be case-sensitive.
-echo:  /X         Prints sub-strings that match exactly.
-echo:  /V         Prints sub-strings that do not contain a match.
+echo:  /I         The search is case-insensitive.
+echo:  /X         Print sub-strings if match exactly.
+echo:  /V         Print sub-strings that do not contain a match.
 echo:  /?         help menu
 echo:  /h         author information
 echo:
