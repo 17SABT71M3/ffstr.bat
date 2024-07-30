@@ -144,6 +144,13 @@ set ipadr=1.1.1.1
 for /f "tokens=*" %%i in ('ping -n %ipadr% ^| findstr /ir "Reply from" ^| find /i "ms"') do for /f "tokens=*" %%a in ('extract.bat /r "^<^>^= " "^[0-9]*ms$" "%i"') do echo %%a
 REM 35ms
 ```
+- Example #8
+```
+C:\Users\Anil Bapna\Desktop>extract.bat "-" /c " " "my-name-is puneet-notwhatyouthink"
+output:
+is puneet
+this command is searching for the literal (/c) space " " with the delimiters (break up characters) being -
+```
 ~<b>Known bugs:</b> It skips the leading spaces in strings,~
 
 <a id="abcd"><sup>#</a></sup>Praise The Lord !`✞` xxxfor helping me thru this Project
