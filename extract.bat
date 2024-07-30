@@ -1,10 +1,29 @@
 @echo off
+set reverse=0
+set last=0
+set onlyonce=1
+set string=%4
+if "%~1"=="/?" set cool=1&goto :printhelpmenu
+if "%~1"=="/h" goto :authorinfo
+if "%~4"=="/last" goto :continue_string
+ if "%~4"=="/reverse" goto :continue_string
+if "%~4"==""  goto :continue_string
+goto :normal
+:continue_string
+set /p string=
+set string="%string%"
+if "%~4" NEQ "" if "%~4"=="/reverse" (set reverse=1) else (set reverse=0)
+if "%~4" NEQ "" if "%~4"=="/last" (set last=1) else (set last=0)
+goto after_continue
+:normal
+if "%~5" NEQ "" if "%~5"=="/reverse" (set reverse=1) else (set reverse=0)
+if "%~5" NEQ "" if "%~5"=="/last" (set last=1) else (set last=0)
+:after_continue
 set finalupload=
 set bemindfulof=%~1
  REM <WEL COME> /\Namastey0`:,
 set handle=%~2
 set cool=0
-
 set regex=%3
   set regex=%regex:[CAPITAL]=[ABCDEFGHIJKLMNOPQRSTUVWXYZ]%
     set regex=%regex:[lower]=[abcdefghijklmnopqrstuvwxyz]%
@@ -41,6 +60,7 @@ if "%bemindfulof%"=="/h" goto authorinfo
 echo:
 echo:Syntax-
 echo:"%~nx0" [delimiter] [/option] ["pattern"] ["string"] {OPTIONAL:[/last][/reverse]}
+if %cool%==1 echo:If "STRING" parameter is not used then batch script expects input from stdin (pipe)
 echo:The following are valid FINDSTR handles in the context of this
 echo:batch script:
 echo:  /C:        Uses the specified pattern as a literal search string. (Do not write
@@ -78,7 +98,7 @@ goto :eof
 REM caution space sensitive code
 set handle=%handle% 
 :endinit
-set string=%4
+
 if [%string%]==[] goto printhelpmenu
 set string=%string:^=^^%
 set string=%string:|=^|%
@@ -86,11 +106,7 @@ set string=%string:&=^&%
 set string=%string:>=^>%
 set string=%string:<=^<%
 
-set reverse=0
-set last=0
-set onlyonce=1
-if "%~5" NEQ "" if "%~5"=="/reverse" (set reverse=1) else (set reverse=0)
-if "%~5" NEQ "" if "%~5"=="/last" (set last=1) else (set last=0)
+
 
 
 REM echo Delimiter = "%bemindfulof% "
