@@ -60,13 +60,13 @@ List of Delimiters that need escaping, not exhaustive:
 please make sure to keep space at the end of the expression. For eg. `"() "` contains
 the delimiters `(`  `)`  and whitespace " ".
 
-### <a id="findstr"></a>Testing using `findstr`
+### <a id="findstr"></a>Experiment with `findstr`
 Make your own tests using the appropriate handle/option to test whether your regex/pattern works to find your sub-string.
 Examples -
 ```
-echo [SUB-STRING]|findstr /r "[Regex pattern]"
-echo [SUB-STRING]|findstr /c:"[literal pattern with/without additional regex patterns]"
-echo [SUB-STRING]|findstr /Ic:"[casE inSensitive PattErn]"
+echo [YOUR-SUB-STRING]|findstr /r "[Regex pattern]"
+echo [YOUR-SUB-STRING]|findstr /c:"[literal pattern with/without additional regex patterns]"
+echo [YOUR-SUB-STRING]|findstr /Ic:"[casE inSensitive PattErn]"
 ```
 
 ### Output Examples  :newspaper:
