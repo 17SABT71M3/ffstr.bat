@@ -11,6 +11,12 @@ _________
 `extract.bat </option> "delimiter" "[pattern]" "STRING"`
 <br><b>limitation</b> Cannot work with a string containing double quotes `"`
 
+<font size=15><b>Now supports read from stdin like:</font></b>
+<br>`echo String hello here without double-quote|extract.bat " " /r "[-]"`
+
+_Conditions for above (**stdin**) usage_: <br>1. string being echoed must not contain double quotes
+<br>2. special symbols must be DOUBLE escaped (eg.`^^^&`)
+
 ### Why the `FINDSTR` handle is used
 Using this extra parameter/option gives us the freedom to use the different `Findstr` handles such as `/c` and `/i`. Remember if `/c` is used in combination with `/r` like `/rc` then the matching is a mix of literal string and regex. This is particularly useful but you should know more about the workings of the `Findstr` Regex. (See: <a href="#findstr">testing using Findstr</a>)
 
