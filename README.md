@@ -64,9 +64,9 @@ the delimiters `(`  `)`  and whitespace " ".
 Make your own tests using the appropriate handle/option to test whether your regex/pattern works to find your sub-string.
 Examples -
 ```
-echo sub-string|findstr /r "pattern"
-echo sub-string|findstr /c:"literal_pattern"
-echo sub-string|findstr /Ic:"Pattern"
+echo [SUB-STRING]|findstr /r "[Regex pattern]"
+echo [SUB-STRING]|findstr /c:"[literal pattern with/without additional regex patterns]"
+echo [SUB-STRING]|findstr /Ic:"[casE inSensitive PattErn]"
 ```
 
 ### Output Examples  :newspaper:
