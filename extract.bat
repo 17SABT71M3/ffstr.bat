@@ -60,6 +60,9 @@ echo:Eg. /bel OR /RI
 echo:
 echo:Not----^> /b /e /l OR /R /I
 echo:
+if %cool%==1 echo: The [pattern] is used to search sub-strings in the given
+if %cool%==1 echo: [string].
+if %cool%==1 echo:
 if %cool%==1 echo: Delimiters using Symbols that need escaping must be 
 if %cool%==1 echo: escaped.         Eg- "^&"
 if %cool%==1 echo: "%~nx0" /?  ----^>Prints this help menu.
