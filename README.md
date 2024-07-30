@@ -146,7 +146,7 @@ REM 35ms
 ```
 - Example #7<br>
 `C:\Users\Anil Bapna\Desktop>extract.bat "-" /c " " "my-name-is puneet-notwhatyouthink"`<br>output:<br>
-`is puneet`<br>this command is searches for the literal space " " using the `/c` handle and the delimiter `-` (the delimiter is the break up character) 
+`is puneet`<br>this command searches for the literal space " " using the `/c` handle and the delimiter `-` (the delimiter is the break up character) 
 
 ~<b>Known bugs:</b> It skips the leading spaces in strings,~
 
