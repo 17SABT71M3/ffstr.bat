@@ -17,7 +17,7 @@ _________
 _Conditions for above (**stdin**) usage_: <br>1. string being echoed must not contain double quotes
 <br>2. special symbols must be DOUBLE escaped (eg.`^^^&`)
 
-Tip: Avoid usage with **stdin** if string contains batch-offensive characters.
+Tip: Avoid usage with **stdin** if string contains batch-offensive characters. (mentioned above as an example)
 
 ### Why the `FINDSTR` handle is incorporated in the Syntax
 Using this extra parameter/option gives us the power to use the different `Findstr` handles such as `/c` and `/i`. Remember if `/c` is used in combination with `/r` like `/rc` then the matching is a mix of literal string and regex. This is particularly useful but you should know more about the workings of the `Findstr` Regex. (See: <a href="#findstr">testing using Findstr</a>)
