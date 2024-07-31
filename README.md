@@ -1,8 +1,6 @@
 <p align="center"><img src="https://github.com/17SABT71M3/ffstr.bat/blob/475e50d4692955fa92a766266b24a0869b84a432/the_line.png"><img>
 <br>✞ Live Guilt Free and Without Pressure<sup><a href="#abcd">#</a></sup></p>
-
-NOTE: < FINDSTR REGEX > is different in operation from regular expected regex. therefore please test your inputs and regex using FINDSTR independently to confirm the output/efficacy
-_________
+________
 
 <b>syntax</b>
 <br>Findstr Syntax: 
@@ -156,6 +154,7 @@ REM 35ms
 `C:\Users\Anil Bapna\Desktop>extract.bat "-" /c " " "my-name-is puneet-notwhatyouthink"`<br>output:<br>
 `is puneet`<br>this command searches for the literal space " " using the `/c` handle and the delimiter `-` (the delimiter is the break up character) 
 
+NOTE: < FINDSTR REGEX > is different in operation from regular expected regex. therefore please test your inputs and regex using FINDSTR independently to confirm the output/efficacy
 ~<b>Known bugs:</b> It skips the leading spaces in strings,~
 
 <a id="abcd"><sup>#</a></sup>Praise The Lord !`✞` xxxfor helping me thru this Project
