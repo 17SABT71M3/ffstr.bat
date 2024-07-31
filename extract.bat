@@ -78,6 +78,7 @@ echo:                                   Syntax
 echo:"%~nx0" [delimiter] [/option] ["pattern"] ["string"] {OPTIONAL:[/last][/reverse]}
 echo:
 if %cool%==1 echo:If "STRING" parameter is not used then batch script expects input from stdin (pipe)
+if %cool%==1 echo:Please strip string of offensive characters ^&^|^^^<^>" before passing
 echo:The following are valid FINDSTR handles in the context of this
 echo:batch script:
 echo:  /C:        Uses the specified pattern as a literal search string. (Do not write
@@ -102,7 +103,7 @@ if %cool%==1 echo: [string].
 if %cool%==1 echo:
 REM if %cool%==1 echo: "%~nx0" /?  ----^>Prints this help menu.
 REM if %cool%==1 echo:
-if %cool%==1 echo: FRIENDLY NOTE: I thank God, I thank you. :)
+if %cool%==1 echo: FRIENDLY NOTE: I thank you, I thank God. :)
 if %cool%==1 echo:
 goto :eof
 :authorinfo
