@@ -20,8 +20,24 @@ if "%~5" NEQ "" if "%~5"=="/reverse" (set reverse=1) else (set reverse=0)
 if "%~5" NEQ "" if "%~5"=="/last" (set last=1) else (set last=0)
 :after_continue
 set finalupload=
-set bemindfulof=%~1
- REM <WEL COME> /\Namastey0`:,
+set bemindfulof=%1
+set bemindfulof=%bemindfulof:^=^^%
+set bemindfulof=%bemindfulof:|=^|%
+set bemindfulof=%bemindfulof:&=^&%
+set bemindfulof=%bemindfulof:>=^>%
+set bemindfulof=%bemindfulof:<=^<%
+set perc_found=0
+set space_found=0
+echo %bemindfulof%|findstr /r "[%%]" >NUL&&set perc_found=1
+set bemindful_space_check=%bemindfulof: =%
+if %bemindful_space_check% NEQ %bemindfulof% set space_found=1
+if %bemindful_space_check% NEQ "" for /f "tokens=*" %%i in (%bemindful_space_check%) do set bemindfulof=%%~i
+if %bemindful_space_check% == "" set bemindfulof=
+set space=
+set percentage=
+if %space_found%==1 set space= 
+REM if %perc_found%==1 set percentage=%%
+REM <WEL COME> /\Namastey0`:,
 set handle=%~2
 set cool=0
 set regex=%3
@@ -57,9 +73,10 @@ goto _init
 :printhelpmenu
 if "%bemindfulof%"=="/?" set /a cool=1
 if "%bemindfulof%"=="/h" goto authorinfo
-echo:
-echo:Syntax-
+echo:Usage for "%~fp0"
+echo:                                   Syntax
 echo:"%~nx0" [delimiter] [/option] ["pattern"] ["string"] {OPTIONAL:[/last][/reverse]}
+echo:
 if %cool%==1 echo:If "STRING" parameter is not used then batch script expects input from stdin (pipe)
 echo:The following are valid FINDSTR handles in the context of this
 echo:batch script:
@@ -83,9 +100,9 @@ echo:
 if %cool%==1 echo: The [pattern] is used to search sub-strings in the given
 if %cool%==1 echo: [string].
 if %cool%==1 echo:
-if %cool%==1 echo: Delimiters using Symbols that need escaping must be 
-if %cool%==1 echo: escaped.         Eg- "^&"
-if %cool%==1 echo: "%~nx0" /?  ----^>Prints this help menu.
+REM if %cool%==1 echo: "%~nx0" /?  ----^>Prints this help menu.
+REM if %cool%==1 echo:
+if %cool%==1 echo: FRIENDLY NOTE: I thank God, I thank you. :)
 if %cool%==1 echo:
 goto :eof
 :authorinfo
@@ -105,8 +122,6 @@ set string=%string:|=^|%
 set string=%string:&=^&%
 set string=%string:>=^>%
 set string=%string:<=^<%
-
-
 
 
 REM echo Delimiter = "%bemindfulof% "
@@ -141,8 +156,7 @@ set /a uploadtaken=1
 set /a found=0
 
 set upload=
-
-for /f "tokens=%token% delims=%bemindfulof%" %%i in (%string%) do set /a found=1&echo %%i|findstr %handle%%regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
+for /f "tokens=%token% delims=%bemindfulof%%space%" %%i in (%string%) do set /a found=1&echo %%i|findstr %handle%%regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
 
 :continue
 call :see
