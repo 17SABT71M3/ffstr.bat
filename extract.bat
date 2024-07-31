@@ -154,9 +154,8 @@ exit /b
 :loop
 set /a uploadtaken=1
 set /a found=0
-
 set upload=
-for /f "tokens=%token% delims=%bemindfulof%%space%" %%i in (%string%) do set /a found=1&echo %%i|findstr %handle%%regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0)
+for /f "tokens=%token% delims=%bemindfulof%%space%" %%i in (%string%) do set /a found=1&echo %%i|findstr %handle%%regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0) 
 
 :continue
 call :see
