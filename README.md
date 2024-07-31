@@ -13,7 +13,7 @@ ________
 <br>`echo String hello here without double-quote|extract.bat " " /r "[-]"`
 
 _Conditions for above (**stdin**) usage_: <br>1. string being echoed must not contain double quotes
-<br>2. special symbols must be DOUBLE escaped (eg.`^^^&`)
+<br>2. special symbols must be DOUBLE escaped (eg.`^^^&`) but can still lead to unexpected results and/or errors. So it is recommended to remove them from the string namely - `&^|><"`
 
 Tip: Avoid usage with **stdin** if string contains batch-offensive characters. (mentioned above as an example)
 
