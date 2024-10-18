@@ -64,20 +64,7 @@ REGEX Notes -
 
 
 ### What are Delimiters
-They are used to separate strings into 'tokens'. Since the given string is split into individual sub-strings, only then the pattern matching is done. Delimiters are  not part of the search hence ignored. You must write the delimiter parameter. If "" is used as the delimiter (Meaning Nothing) then the whole string is treated as One String and there is no substring to extract from it. If you have a sentence containing words which you would like to search, one possible delimiter is WHITESPACE `" "`. If you have a string like `"https://www.yahoo.com/search?q=HELLO"` you may want to use "=" as the delimiter is your looking for the sub-string `HELLO`. ~All characters that are escaped in batch scripts like `&` and `|` need to be escaped like `"^&"` and `"^|"` respectively for the script to work. You can specify more than one delimiters by combining them like `"^& "` (contains the `&` character and space)~
-
-~List of Delimiters that need escaping, not exhaustive:~
-
-~| Character       | Syntax          |~
-| --------------- | --------------- |
-~| &    | "^&"    |~
-~| \|   | "^\|"   |~
-~| ^   | "^^"   |~
-~| =   | "^="   |~
-
-~<b>NOTE:</b>If you are using space " " as a delimiter in addition to another delimiter/s
-please make sure to keep space at the end of the expression. For eg. `"() "` contains
-the delimiters `(`  `)`  and whitespace " ".~
+They are used to separate strings into 'tokens'. Since the given string is split into individual sub-strings, only then the pattern matching is done. Delimiters are  not part of the search hence ignored. You must write the delimiter parameter. If "" is used as the delimiter (Meaning Nothing) then the whole string is treated as One String and there is no substring to extract from it. If you have a sentence containing words which you would like to search, one possible delimiter is WHITESPACE `" "`. If you have a string like `"https://www.yahoo.com/search?q=HELLO"` you may want to use "=" as the delimiter is your looking for the sub-string `HELLO`. 
 
 ### <a id="findstr"></a>Experiment with `findstr`
 Make your own tests using the appropriate handle/option to test whether your regex/pattern works to find your sub-string.
