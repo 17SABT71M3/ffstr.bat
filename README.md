@@ -30,7 +30,7 @@ _Conditions for above (**stdin**) usage_: <br>1. string being echoed must not co
 
 Tip: Avoid usage with **stdin** if string contains offensive characters. (mentioned above as an example)
 
-### Why the `FINDSTR` handle is incorporated in the Syntax
+### Why `FINDSTR` options is incorporated in the Syntax
 Using this extra parameter/option gives us the power to use the different `Findstr` handles such as `/c` and `/i`. Remember if `/c` is used in combination with `/r` like `/rc` then the matching is a mix of literal string and regex. This is particularly useful but you should know more about the workings of the `Findstr` Regex. (See: <a href="#findstr">testing using Findstr</a>)
 
 ### Regex Substitutes added to script
