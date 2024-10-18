@@ -3,6 +3,11 @@
 
 ________
 
+<p><a id="abcd"><sup>#</a></sup></p>
+Praise The Lord ! `✞` xxxfor helping me thru this Project
+<br>(C) Readme . Rest in Peace `☮`
+<br><b>Pray for me!!
+
 <SUP>
 <b># # # # SAMPLE CODE # # # #<br></b>
 set sentence="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"<br>
@@ -155,7 +160,8 @@ REM 35ms
 `is puneet`<br>this command searches for the literal space ` ` using the `/c` handle and the delimiter `-` (the delimiter is the break up character) 
 
 NOTE: < FINDSTR REGEX > is different in operation from regular expected regex. therefore please test your inputs and regex using FINDSTR independently to confirm the output/efficacy
-<b>
-<a id="abcd"><sup>#</a></sup>Praise The Lord !`✞` xxxfor helping me thru this Project
+
+<p><a id="abcd"><sup>#</a></sup></p>
+Praise The Lord ! `✞` xxxfor helping me thru this Project
 <br>(C) Readme . Rest in Peace `☮`
 <br><b>Pray for me!!
