@@ -1,5 +1,17 @@
 <p align="center"><img src="https://github.com/17SABT71M3/ffstr.bat/blob/475e50d4692955fa92a766266b24a0869b84a432/the_line.png"><img>
 <br>✞ Live Guilt Free and Without Pressure<sup><a href="#abcd">#</a></sup></p>
+
+________
+
+<SUP>
+<b># # # # SAMPLE CODE # # # #<br></b>
+set sentence="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"<br>
+for /f "delims=" %%i in ('extract.bat /r " " "[[a-z]]" %sentence%') do set removable_word=%%i<br>
+echo %removable_word%<br>
+<b># # # # SAMPLE OUTPUT # # # #</b><br>
+[ZjphaXXEU9o]
+ </SUP>
+ 
 ________
 
 <b>syntax</b>
