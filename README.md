@@ -16,11 +16,10 @@ ________
 _Thanks for visiting !!_
  </p>
 <b>syntax</b>
-<br>Findstr Syntax: 
-`findstr </option> "[pattern]" "optional:filename"`
-<br>Extract.bat Syntax:
-`extract.bat </option> "delimiter" "[pattern]" "STRING"`
-<br><b>limitation</b> Cannot work with a string containing double quotes `"`
+<br>Findstr Syntax: findstr </option> "[pattern]" "optional:filename"
+<br><b>Extract.bat Syntax:</b>
+extract.bat </option> "delimiter" "[pattern]" "STRING"
+<br><b>limitation</b> Cannot work with a string containing double quotes "
 
 <font size=15><b>Now supports read from stdin like:</font></b>
 <br>`echo String hello here without double-quote|extract.bat " " /r "[-]"`
