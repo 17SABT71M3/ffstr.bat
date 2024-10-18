@@ -13,7 +13,8 @@ echo %removable_word%<br>
  </SUP>
  
 ________
-
+_Thanks for visiting !!_
+ </p>
 <b>syntax</b>
 <br>Findstr Syntax: 
 `findstr </option> "[pattern]" "optional:filename"`
