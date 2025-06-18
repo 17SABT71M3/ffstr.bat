@@ -35,18 +35,21 @@ for example:-
 It is particularly useful to know about the workings of the `Findstr` Regex. (See: <a href="#findstr">testing using Findstr</a>)
 
 ### Regex Substitutes added to script
-This particular batch script has built-in substitutes for `findstr`'s REGEX certain short comings. in particular, capital or lower letters. `Findstr` has a particular way of functioning that is different from normal regexes there are certain shortcomings. Example-
+This particular batch script has built-in substitutes for `findstr`'s REGEX short comings. in particular, capital or lower letters. 
+`Findstr` has a particular way of functioning that is different from normal regexes there are certain shortcomings. 
+There are substitutes built into this script for there to be a work around.
+, namely
+- `[CAPITAL]`
+- `[lower]`
+
+Example-
 ```
 C:\Users\Anil Bapna\Desktop>extract.bat /r " " "^[a-z]" "HELo hello"
 HELo
 hello
 ```
 Despite the lower case of [a-z] the result output is both letters starting with Capital H and lower h.
-`Findstr` operates differently with such regexes. There are substitutes built into this script for there to be a work around.
-, namely
-- `[CAPITAL]`
-- `[lower]`
-
+`Findstr` operates differently with such regexes. 
 REGEX Notes -
 
 | Character       | Remarks          |
@@ -156,6 +159,8 @@ REM 35ms
 `is puneet`<br>this command searches for the literal space ` ` using the `/c` handle and the delimiter `-` (the delimiter is the break up character) 
 
 NOTE: < FINDSTR REGEX > is different in operation from regular expected regex. therefore please test your inputs and regex using FINDSTR independently to confirm the output/efficacy
+<h1> Final apologies</h1>
+i am revisiting this page (not the project) and find the code to be miserably planned. this script hangs if no arguments are provided. barring the fact that it still works, my apologies for such shoddy work.
 
 <p><a id="abcd"><sup>#</a></sup></p>
 @@@
