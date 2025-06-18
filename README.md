@@ -15,11 +15,9 @@ echo %removable_word%<br>
 ________
 _Thanks for visiting !!_
  </p>
-<b>syntax</b>
-<br>Findstr Syntax: findstr </option> "[pattern]" "optional:filename"
+
 <br><b>Extract.bat Syntax:</b>
-extract.bat </option> "delimiter" "[pattern]" "STRING"
-<br><b>limitation</b> Cannot work with a string containing double quotes "
+"extract.bat" [delimiter] [/option] ["pattern"] ["string"] {OPTIONAL:[/last][/reverse]}
 
 <font size=15><b>Now supports read from stdin like:</font></b>
 <br>`echo String hello here without double-quote|extract.bat " " /r "[-]"`
@@ -29,8 +27,12 @@ _Conditions for above (**stdin**) usage_: <br>1. string being echoed must not co
 
 Tip: Avoid usage with **stdin** if string contains offensive characters. (mentioned above as an example)
 
-### Why `FINDSTR` options is incorporated in the Syntax
-Using this extra parameter/option gives us the power to use the different `Findstr` handles such as `/c` and `/i`. Remember if `/c` is used in combination with `/r` like `/rc` then the matching is a mix of literal string and regex. This is particularly useful but you should know more about the workings of the `Findstr` Regex. (See: <a href="#findstr">testing using Findstr</a>)
+### Using `FINDSTR` options reference in the syntax
+To confirm the
+<br>Findstr Syntax: findstr </option> "[pattern]" "optional:filename"<br>
+The `extract.bat` and `findstr`'s </option> parameters are the same. Except in `extract.bat` multiple options are combined like `/rc` instead of `/r /c`. There is also one more difference: the `/c:` option strictly follows the syntax of `extract.bat`
+for example:-
+It is particularly useful to know about the workings of the `Findstr` Regex. (See: <a href="#findstr">testing using Findstr</a>)
 
 ### Regex Substitutes added to script
 This particular batch script has built-in substitutes for `findstr`'s REGEX certain short comings. in particular, capital or lower letters. `Findstr` has a particular way of functioning that is different from normal regexes there are certain shortcomings. Example-
