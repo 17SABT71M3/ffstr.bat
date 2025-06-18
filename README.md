@@ -1,7 +1,3 @@
-<p align="center"><img src="https://github.com/17SABT71M3/ffstr.bat/blob/475e50d4692955fa92a766266b24a0869b84a432/the_line.png"><img>
-<br>✞ Live Guilt Free and Without Pressure<sup><a href="#abcd">#</a></sup></p>
-
-________
 
 <SUP>
 <b># # # # SAMPLE CODE # # # #<br></b>
@@ -42,14 +38,7 @@ There are substitutes built into this script for there to be a work around.
 - `[CAPITAL]`
 - `[lower]`
 
-Example-
-```
-C:\Users\Anil Bapna\Desktop>extract.bat /r " " "^[a-z]" "HELo hello"
-HELo
-hello
-```
-Despite the lower case of [a-z] the result output is both letters starting with Capital H and lower h.
-`Findstr` operates differently with such regexes. 
+
 REGEX Notes -
 
 | Character       | Remarks          |
@@ -66,7 +55,7 @@ REGEX Notes -
 - The third parameter is the `FINDSTR`-compatible regex
 - The fourth parameter is the STRING to extract substring from.
 
-
+<h1>Noob section</h1>
 ### What are Delimiters
 They are used to separate strings into 'tokens'. Since the given string is split into individual sub-strings, only then the pattern matching is done. Delimiters are  not part of the search hence ignored. You must write the delimiter parameter. If "" is used as the delimiter (Meaning Nothing) then the whole string is treated as One String and there is no substring to extract from it. If you have a sentence containing words which you would like to search, one possible delimiter is WHITESPACE `" "`. If you have a string like `"https://www.yahoo.com/search?q=HELLO"` you may want to use "=" as the delimiter is your looking for the sub-string `HELLO`. 
 
@@ -78,9 +67,10 @@ echo [YOUR-SUB-STRING]|findstr /r "[Regex pattern]"
 echo [YOUR-SUB-STRING]|findstr /c:"[literal pattern with/without additional regex patterns]"
 echo [YOUR-SUB-STRING]|findstr /Ic:"[casE inSensitive PattErn]"
 ```
+____________
 
 ### Output Examples  :newspaper:
-- Example #1 ```extract.bat /r " " "^[CAPITAL]" "Hello hollow oh so dear Mister Pierce"```
+- Example #1 ```extract.bat " " /r  "^[CAPITAL]" "Hello hollow oh so dear Mister Pierce"```
 
 Output:
 ```
@@ -88,7 +78,7 @@ Hello
 Mister
 Pierce
 ```
-- Example #2 ```extract.bat /r " " "^[lower]*$" "Hello hollow oh so dear Mister PierceX ------"```
+- Example #2 ```extract.bat " " /r "^[lower]*$" "Hello hollow oh so dear Mister PierceX ------"```
 
 Output:
 ```
@@ -98,7 +88,7 @@ so
 dear
 ------
 ```
-- Example #3 ```extract.bat /c  "H"  " " "x x yH EL LO"```
+- Example #3 ```extract.bat  "H"  /c " " "x x yH EL LO"```
 <br>Note: the delimiter here used is "H"
 
 Output:
@@ -106,7 +96,7 @@ Output:
 x x y
  EL LO
 ```
-- Example #4 ```extract.bat /e ";" "E" "HEEB;HXLP; EE;EEJO"```
+- Example #4 ```extract.bat ";" /e "E" "HEEB;HXLP; EE;EEJO"```
 <br>Note: Out of the Words HEEB, HXLP, EE, EEJO we are looking for the word ending (/e option used) 
 with E.
 
@@ -121,19 +111,19 @@ Simple usage in batch files.
 - Example #1
 ```
 set file_name="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"
-for /f "delims=" %%i in ('extract.bat /r " " "[[a-z]]" %file_name%') do set removable_part=%%i
+for /f "delims=" %%i in ('extract.bat " " /r "[[a-z]]" %file_name%') do set removable_part=%%i
 REM removable_part=[ZjphaXXEU9o]
 CALL set file_name=%%filename:%removable_part%=%%
 ```
 - Example #2
 ```
 set file_name="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"
-for /f "delims=" %%i in ('extract.bat /r " ()" "[1-2][0-9][0-9][0-9]" %file_name%') do set year=%%i
+for /f "delims=" %%i in ('extract.bat " ()" /r "[1-2][0-9][0-9][0-9]" %file_name%') do set year=%%i
 REM year of song is %year%
 ```
 - Example #3
 ```
-for /f "delims=" %%i in ('ver') do for /f "delims=" %%a in ('extract.bat /r "()[] " "^[0-9.]*$" "%%i"') do set ver=%%a
+for /f "delims=" %%i in ('ver') do for /f "delims=" %%a in ('extract.bat "()[] " /r "^[0-9.]*$" "%%i"') do set ver=%%a
 echo Windows Version is %ver%
 ```
 - Example #4
@@ -151,7 +141,7 @@ REM video_id bhH5M_HH2k4
 - Example #6
 ```
 set ipadr=1.1.1.1
-for /f "tokens=*" %%i in ('ping -n %ipadr% ^| findstr /ir "Reply from" ^| find /i "ms"') do for /f "tokens=*" %%a in ('extract.bat /r "^<^>^= " "^[0-9]*ms$" "%i"') do echo %%a
+for /f "tokens=*" %%i in ('ping -n %ipadr% ^| findstr /ir "Reply from" ^| find /i "ms"') do for /f "tokens=*" %%a in ('extract.bat "^<^>^= " /r  "^[0-9]*ms$" "%i"') do echo %%a
 REM 35ms
 ```
 - Example #7<br>
@@ -162,8 +152,7 @@ NOTE: < FINDSTR REGEX > is different in operation from regular expected regex. t
 <h1> Final apologies</h1>
 i am revisiting this page (not the project) and find the code to be miserably planned. this script hangs if no arguments are provided. barring the fact that it still works, my apologies for such shoddy work.
 
-<p><a id="abcd"><sup>#</a></sup></p>
-@@@
- Praise The Lord ! `✞` xxxfor helping me thru this Project
+Praise The Lord ! `✞` xxxfor helping me thru this Project
 <br>(C) Readme . Rest in Peace `☮`
 <br>Pray for me!!
+<br>✞ Live Guilt Free and Without Pressure<sup><a href="#abcd">#</a></sup></p>
