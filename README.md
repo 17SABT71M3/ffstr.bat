@@ -150,7 +150,7 @@ REM 35ms
 
 NOTE: < FINDSTR REGEX > is different in operation from regular expected regex. therefore please test your inputs and regex using FINDSTR independently to confirm the output/efficacy
 <h1> Final apologies</h1>
-i am revisiting this page (not the project) and find the code to be miserably planned. this script hangs (actually it is waiting for stdin input) if no arguments are provided. my apologies for such shoddy work. barring that fact, it still works. i can't go back and correct it at this point in time.
+i am revisiting this page (not the project) and find the code to be miserably planned. this script hangs (actually it is waiting for stdin input) if no arguments are provided. my apologies for such shoddy work. barring that fact, it still works. i can't go back and correct it at this point in time. please bear with us,
 
 Praise The Lord ! `✞` xxxfor helping me thru this Project
 <br>(C) Readme . Rest in Peace `☮`
