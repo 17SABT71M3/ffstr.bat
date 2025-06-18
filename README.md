@@ -2,7 +2,7 @@
 <SUP>
 <b># # # # SAMPLE CODE # # # #<br></b>
 set sentence="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"<br>
-for /f "delims=" %%i in ('extract.bat /r " " "[[a-z]]" %sentence%') do set removable_word=%%i<br>
+for /f "delims=" %%i in ('extract.bat " " /r  "[[a-z]]" %sentence%') do set removable_word=%%i<br>
 echo %removable_word%<br>
 <b># # # # SAMPLE OUTPUT # # # #</b><br>
 [ZjphaXXEU9o]
