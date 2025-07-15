@@ -15,6 +15,8 @@ _Thanks for visiting !!_
 <br><b>Extract.bat Syntax:</b>
 "extract.bat" [delimiter] [/option] ["pattern"] ["string"] {OPTIONAL:[/last][/reverse]}
 
+
+### Now supports stdin usage (warning included)
 <font size=15><b>Now supports read from stdin like:</font></b>
 <br>`echo String hello here without double-quote|extract.bat " " /r "[-]"`
 
@@ -23,23 +25,30 @@ _Conditions for above (**stdin**) usage_: <br>1. string being echoed must not co
 
 Tip: Avoid usage with **stdin** if string contains offensive characters. (mentioned above as an example)
 
-### Using `FINDSTR` options reference in the syntax
-To confirm the
+### `findstr` tests
+Make your own tests using the appropriate handle/option to test whether your regex/pattern works to find your sub-string.
+Examples -
+```
+echo [YOUR-SUB-STRING]|findstr /r "[Regex pattern]"
+echo [YOUR-SUB-STRING]|findstr /c:"[literal pattern with/without additional regex patterns]"
+echo [YOUR-SUB-STRING]|findstr /Ic:"[casE inSensitive PattErn]"
+```
+
+### Study `FINDSTR` options reference in the syntax
+
 <br>Findstr Syntax: findstr </option> "[pattern]" "optional:filename"<br>
-The `extract.bat` and `findstr`'s </option> parameters are the same. Except in `extract.bat` multiple options are combined like `/rc` instead of `/r /c`. There is also one more difference: the `/c:` option strictly follows the syntax of `extract.bat`
-for example:-
-It is particularly useful to know about the workings of the `Findstr` Regex. (See: <a href="#findstr">testing using Findstr</a>)
+The `extract.bat` and `findstr`'s first (`</option>`) parameter are the same. Except in `extract.bat` multiple options like `/r /c`  are combined  `/rc`. There is also one more difference: use `/c` instead of `/c:` and strictly follow the syntax of `extract.bat`
 
-### Regex Substitutes added to script
-This particular batch script has built-in substitutes for `findstr`'s REGEX short comings. in particular, capital or lower letters. 
-`Findstr` has a particular way of functioning that is different from normal regexes there are certain shortcomings. 
-There are substitutes built into this script for there to be a work around.
-, namely
-- `[CAPITAL]`
-- `[lower]`
+### Regex additions in addition to findstr's regex pattern
+This particular batch script has built-in substitutes for `findstr`'s missing regex support. 
+Capital or lower letters. 
+`Findstr` has a particular way of functioning that is different from normal regexes that it does not work for upper/lower case letters.
+These substitutes can be used:-
+- `[CAPITAL]` this will match all uppercase letters only
+- `[lower]` this will match all lowercase letters only
 
 
-REGEX Notes -
+Tips on using findstr's regex pattern -
 
 | Character       | Remarks          |
 | --------------- | --------------- |
@@ -58,15 +67,6 @@ REGEX Notes -
 <h1>Noob section</h1>
 ### What are Delimiters
 They are used to separate strings into 'tokens'. Since the given string is split into individual sub-strings, only then the pattern matching is done. Delimiters are  not part of the search hence ignored. You must write the delimiter parameter. If "" is used as the delimiter (Meaning Nothing) then the whole string is treated as One String and there is no substring to extract from it. If you have a sentence containing words which you would like to search, one possible delimiter is WHITESPACE `" "`. If you have a string like `"https://www.yahoo.com/search?q=HELLO"` you may want to use "=" as the delimiter is your looking for the sub-string `HELLO`. 
-
-### <a id="findstr"></a>Experiment with `findstr`
-Make your own tests using the appropriate handle/option to test whether your regex/pattern works to find your sub-string.
-Examples -
-```
-echo [YOUR-SUB-STRING]|findstr /r "[Regex pattern]"
-echo [YOUR-SUB-STRING]|findstr /c:"[literal pattern with/without additional regex patterns]"
-echo [YOUR-SUB-STRING]|findstr /Ic:"[casE inSensitive PattErn]"
-```
 ____________
 
 ### Output Examples  :newspaper:
