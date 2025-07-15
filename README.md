@@ -47,7 +47,7 @@ These substitutes can be used:-
 - `[lower]` this will match all lowercase letters only
 
 
-Tips on using findstr's regex pattern -
+### Tips on using findstr's regex pattern -
 
 | Character       | Remarks          |
 | --------------- | --------------- |
