@@ -34,8 +34,7 @@ echo [YOUR-SUB-STRING]|findstr /c:"[literal pattern with/without additional rege
 echo [YOUR-SUB-STRING]|findstr /Ic:"[casE inSensitive PattErn]"
 ```
 
-### Study `FINDSTR` options reference in the syntax
-
+### Study `FINDSTR` options to reference in the syntax
 <br>Findstr Syntax: findstr </option> "[pattern]" "optional:filename"<br>
 The `extract.bat` and `findstr`'s first (`</option>`) parameter are the same. Except in `extract.bat` multiple options like `/r /c`  are combined  `/rc`. There is also one more difference: use `/c` instead of `/c:` and strictly follow the syntax of `extract.bat`
 
