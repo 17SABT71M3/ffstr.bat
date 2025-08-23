@@ -1,5 +1,3 @@
-
-<SUP>
 <h4>SAMPLE CODES</h4>
 
 ```
