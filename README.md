@@ -58,8 +58,8 @@ These substitutes can be used:-
 | Space " "    | if you are looking for whitespace " " use the `/c` option. (can be clubbed with the `/r` option for half regex half literal matches `/rc` )   |
 
 ### Script Syntax Quick Review
-- The first parameter is the `FINDSTR` handle Eg. `/r`
-- The second parameter is the delimiter
+- The first parameter is the delimiter
+- The second parameter is the `FINDSTR` handle Eg. `/r`
 - The third parameter is the `FINDSTR`-compatible regex
 - The fourth parameter is the STRING to extract substring from.
 
