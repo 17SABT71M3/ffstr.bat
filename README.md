@@ -1,3 +1,4 @@
+<SUP>
 <h4>SAMPLE CODES</h4>
 
 ```
@@ -14,7 +15,7 @@ echo %removable_word%
 REM OUTPUT is mentioned below
 REM [ZjphaXXEU9o]
 ```
- 
+ </SUP>
 ________
 _Thanks for visiting !!_
  </p>
