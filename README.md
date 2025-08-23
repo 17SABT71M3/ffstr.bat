@@ -1,12 +1,21 @@
 
 <SUP>
-<b># # # # SAMPLE CODE # # # #<br></b>
-set sentence="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"<br>
-for /f "delims=" %%i in ('extract.bat " " /r  "[[a-z]]" %sentence%') do set removable_word=%%i<br>
-echo %removable_word%<br>
-<b># # # # SAMPLE OUTPUT # # # #</b><br>
-[ZjphaXXEU9o]
- </SUP>
+<h4>SAMPLE CODES</h4>
+
+```
+::sample1
+set "string=abc 123"
+for /f "delims=" %%i in ('extract.bat " " /r  "[[a-z]]" %string%') do set match=%%i
+echo %match%
+REM OUTPUT is mentioned below
+REM abc
+::sample2
+set sentence="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"
+for /f "delims=" %%i in ('extract.bat " " /r  "[[a-z]]" %sentence%') do set removable_word=%%i
+echo %removable_word%
+REM OUTPUT is mentioned below
+REM [ZjphaXXEU9o]
+```
  
 ________
 _Thanks for visiting !!_
