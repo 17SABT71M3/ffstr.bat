@@ -16,7 +16,10 @@ REM OUTPUT is mentioned below
 REM [ZjphaXXEU9o]
 ```
  </SUP>
-________
+
+> [!IMPORTANT] 
+> Strings and patterns must always be sanitized of offending characters before using to prevent failure!
+
 _Thanks for visiting !!_
  </p>
 
