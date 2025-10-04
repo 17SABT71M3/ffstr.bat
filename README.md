@@ -38,7 +38,7 @@ _Thanks for visiting !!_
  </p>
 
 <br><b>Extract.bat Syntax:</b>
-"extract.bat" [delimiter] [/option] ["pattern"] ["string"] {OPTIONAL:[/last][/reverse]}
+"extract.bat" [delimiter] [/option] ["pattern"] ["string"] {OPTIONAL:[/first][/last][/reverse]}
 
 
 ### Now supports stdin usage (warning included)
