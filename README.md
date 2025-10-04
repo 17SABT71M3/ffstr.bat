@@ -50,7 +50,7 @@ _Conditions for above (**stdin**) usage_: <br>1. string being echoed must not co
 
 Tip: Avoid usage with **stdin** if string contains offensive characters. (mentioned above)
 
-### `findstr` tests
+### `findstr` patterns examples
 Make your own tests using the appropriate handle/option to test whether your regex/pattern works to find your sub-string.
 Examples -
 ```
@@ -59,7 +59,7 @@ echo [YOUR-SUB-STRING]|findstr /c:"[literal pattern with/without additional rege
 echo [YOUR-SUB-STRING]|findstr /Ic:"[casE inSensitive PattErn]"
 ```
 
-### Study `FINDSTR` options to reference in the syntax
+### Study `FINDSTR` options as reference 
 <br>Findstr Syntax: findstr </option> "[pattern]" "optional:filename"<br>
 The `extract.bat` and `findstr`'s first (`</option>`) parameter are the same. Except in the script `extract.bat` multiple options like `/r /c`  are combined  `/rc`. There is also one more difference: use `/c` instead of `/c:` and strictly follow the syntax of `extract.bat`
 
