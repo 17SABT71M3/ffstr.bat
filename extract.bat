@@ -1,23 +1,28 @@
 @echo off
 set reverse=0
 set last=0
+set first=0
 set onlyonce=1
 set string=%4
 if "%~1"=="/?" set cool=1&goto :printhelpmenu
 if "%~1"=="/h" goto :authorinfo
 if "%~4"=="/last" goto :continue_string
  if "%~4"=="/reverse" goto :continue_string
+ if "%~4"=="/first" goto :continue_string
 if "%~4"==""  goto :continue_string
 goto :normal
 :continue_string
 set /p string=
 set string="%string%"
+echo YEAH
 if "%~4" NEQ "" if "%~4"=="/reverse" (set reverse=1) else (set reverse=0)
+if "%~4" NEQ "" if "%~4"=="/first" (echo OF COURSE&set first=1) else (set first=0)
 if "%~4" NEQ "" if "%~4"=="/last" (set last=1) else (set last=0)
 goto after_continue
 :normal
 if "%~5" NEQ "" if "%~5"=="/reverse" (set reverse=1) else (set reverse=0)
 if "%~5" NEQ "" if "%~5"=="/last" (set last=1) else (set last=0)
+if "%~5" NEQ "" if "%~5"=="/first" (set first=1) else (set first=0)
 :after_continue
 set finalupload=
 set bemindfulof=%1
@@ -75,7 +80,7 @@ if "%bemindfulof%"=="/?" set /a cool=1
 if "%bemindfulof%"=="/h" goto authorinfo
 echo:Usage for "%~fp0"
 echo:                                   Syntax
-echo:"%~nx0" [delimiter] [/option] ["pattern"] ["string"] {OPTIONAL:[/last][/reverse]}
+echo:"%~nx0" [delimiter] [/option] ["pattern"] ["string"] {OPTIONAL:[/first][/last][/reverse]}
 echo:
 if %cool%==1 echo:If "STRING" parameter is not used then batch script expects input from stdin (pipe)
 if %cool%==1 echo:Please strip string of offensive characters ^&^|^^^<^>" before passing
@@ -157,13 +162,12 @@ set /a uploadtaken=1
 set /a found=0
 set upload=
 for /f "tokens=%token% delims=%bemindfulof%%space%" %%i in (%string%) do set /a found=1&echo %%i|findstr %handle%%regex% >NUL&&(set upload="%%i"&set /a uploadtaken=0) 
-
 :continue
 call :see
-
 set /a token+=1
 if %reverse%==1 if %uploadtaken%==0 for /f "delims=" %%i in (%upload%) DO for /f "delims=" %%a in ('echo:%%i') do call :loop & echo %%a
 if %last%==1 if %uploadtaken%==0 call :loop & call :printonce
+if %first%==1 for /f "delims=" %%i in (%upload%) DO for /f "delims=" %%a in ('echo:%%i') do echo:%%a & goto :eof
 if %reverse%==0 if %last%==0 if %uploadtaken%==0  for /f "delims=" %%i in (%upload%) DO for /f "delims=" %%a in ('echo:%%i') do echo:%%a
 if %found%==1 goto loop
 
