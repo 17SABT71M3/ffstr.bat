@@ -26,7 +26,7 @@ REM VID_20230425_210932.mp4
 REM VID_20230425_211227.mp4
 REM VID_20230425_211648.mp4
 REM VID_20230425_211841.mp4
-for /f "delims=" %%i in ('dir /b') do ..\Desktop\extract.bat  "imgvidIMGVID_." /r "[2][0][0-9]*" "%%i"
+for /f "delims=" %%i in ('dir /b') do ..\Desktop\extract.bat  "imgvidIMGVID_." /r "[2][0][0-9]*" "%%i" /first
 REM 20230425
 ```
  </SUP>
