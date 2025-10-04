@@ -90,9 +90,9 @@ These substitutes can be used:-
 - The fifth parameter is OPTIONAL: if you wish to get the results in reverse order or only print the first or only print the last result
 
 <h1>More examples for simplicity</h1>
+
 ### What are Delimiters
 They are used to separate strings into 'tokens'. Since the given string is split into individual sub-strings, only then the pattern matching is done. Delimiters are  not part of the search hence ignored. You must write the delimiter parameter. If "" is used as the delimiter (Meaning Nothing) then the whole string is treated as One String and there is no substring to extract from it. If you have a sentence containing words which you would like to search, one possible delimiter is WHITESPACE `" "`. If you have a string like `"https://www.yahoo.com/search?q=HELLO"` you may want to use "=" as the delimiter is your looking for the sub-string `HELLO`. 
-____________
 
 ### Output Examples  :newspaper:
 - Example #1 ```extract.bat " " /r  "^[CAPITAL]" "Hello hollow oh so dear Mister Pierce"```
@@ -131,8 +131,10 @@ Output:
 ```
 Notice the leading space is preserved.
 
-### Noob Heaven :hear_no_evil::hear_no_evil:🥳
-Simple usage in batch files.
+### Usage in batch files for noobs and new comers 
+
+:hear_no_evil::hear_no_evil:🥳
+
 - Example #1
 ```
 set file_name="Seventh Son of a Seventh Son (2015 Remaster) [ZjphaXXEU9o]"
