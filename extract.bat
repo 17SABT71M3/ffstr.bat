@@ -167,9 +167,10 @@ call :see
 set /a token+=1
 if %reverse%==1 if %uploadtaken%==0 for /f "delims=" %%i in (%upload%) DO for /f "delims=" %%a in ('echo:%%i') do call :loop & echo %%a
 if %last%==1 if %uploadtaken%==0 call :loop & call :printonce
-if %first%==1 for /f "delims=" %%i in (%upload%) DO for /f "delims=" %%a in ('echo:%%i') do echo:%%a & goto :eof
+if %first%==1 for /f "delims=" %%i in (%upload%) DO for /f "delims=" %%a in ('echo:%%i') do echo:%%a& goto :eof
 if %reverse%==0 if %last%==0 if %uploadtaken%==0  for /f "delims=" %%i in (%upload%) DO for /f "delims=" %%a in ('echo:%%i') do echo:%%a
 if %found%==1 goto loop
 
 :end
+
 ::SWEET::DREAMS`
