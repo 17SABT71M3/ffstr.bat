@@ -14,6 +14,20 @@ for /f "delims=" %%i in ('extract.bat " " /r  "[[a-z]]" %sentence%') do set remo
 echo %removable_word%
 REM OUTPUT is mentioned below
 REM [ZjphaXXEU9o]
+::sample3
+REM VID20250809215217.mp4
+REM VID20250810110306.mp4
+REM VID20250813145833.mp4
+REM VID20250818092139.mp4
+REM VID_20230425_210417.mp4
+REM VID_20230425_210545.mp4
+REM VID_20230425_210746.mp4
+REM VID_20230425_210932.mp4
+REM VID_20230425_211227.mp4
+REM VID_20230425_211648.mp4
+REM VID_20230425_211841.mp4
+for /f "delims=" %%i in ('dir /b') do ..\Desktop\extract.bat  "imgvidIMGVID_." /r "[2][0][0-9]*" "%%i"
+REM 20230425
 ```
  </SUP>
 
