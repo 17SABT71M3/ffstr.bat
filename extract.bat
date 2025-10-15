@@ -14,7 +14,7 @@ goto :normal
 :continue_string
 set /p string=
 set string="%string%"
-echo YEAH
+REM echo YEAH
 if "%~4" NEQ "" if "%~4"=="/reverse" (set reverse=1) else (set reverse=0)
 if "%~4" NEQ "" if "%~4"=="/first" (echo OF COURSE&set first=1) else (set first=0)
 if "%~4" NEQ "" if "%~4"=="/last" (set last=1) else (set last=0)
@@ -174,3 +174,4 @@ if %found%==1 goto loop
 :end
 
 ::SWEET::DREAMS`
+
